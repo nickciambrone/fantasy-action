@@ -1,0 +1,263 @@
+@media screen and (max-width: 895px) {
+    .view-lines-user-team{
+    }
+    .first-dark{
+    height:40px
+    }
+    .change-format-button-container-vl{
+width:46.5%
+    }
+    .edit-lineup-button-container{
+        width:46.5%
+    }
+.first-psv{
+    width:60%
+}
+.first-psv-b{
+    width:40%
+}
+.roster-container-vl{
+    width:97%;
+    margin-left:1.5%;
+    padding:2.5px;
+    margin-top: 8px;
+}
+    .dark{
+        height:65px;
+        padding-top:12px;
+
+    }
+    .player-slot-vl{
+        height:53px;
+  
+    }
+    .view-lines-content{
+    
+        display:flex;
+        flex-direction: column;
+
+        
+    }
+    .left-view-lines{
+        width:100%
+    }
+    .line-card-holder{
+        width:100%
+    }
+    .bet-slip-container{
+        width:50%
+    }
+    .lineups{
+        display: flex;
+        flex-direction: column;
+    
+    }
+  
+}
+@media screen and (min-width: 895px) {
+    .dark{
+        padding-top:3px;
+        height:35px
+    }
+    .first-psv{
+        width:60%
+    }
+    .first-psv-b{
+        width:40%
+    }
+    .roster-container-vl{
+        width:95%
+    }
+    .edit-lineup-button-container{
+        margin-top: 4px;
+    }
+    .view-lines-content{
+        display:flex;
+        padding-left:10px;
+        padding-right:10px
+    }
+    .left-view-lines{
+        width:52%;
+        margin-left:2%;
+    }
+    .bet-slip-container{
+        width:90%
+    }
+    .lineups{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    
+}
+@media screen and (max-width: 500px) {
+
+.left-top{
+    display: flex;
+    flex-direction: column;
+}
+.bet-slip-container{
+    width:96%;
+    margin-left: 2%;
+}
+.back-buttons-view-lines{
+    display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+}
+.view-lines-user-team{
+    width:96%;
+
+}
+.view-lines-opponent-team{
+    width:96%;
+}
+}
+@media screen and (min-width: 500px) {
+    
+
+    .left-top{
+        display: flex;
+        flex-direction: row;
+    }
+    .back-buttons-view-lines{
+        display: flex;
+            flex-direction: column;
+            width:27.64%
+    }
+    .view-lines-user-team{
+        width:50%
+    }
+    .view-lines-opponent-team{
+        width:50%
+    }
+    }
+
+.view-lines-card{
+  padding-top:6px;
+  border-radius: 2px;
+
+}
+
+ul{
+    list-style-type: none;
+}
+
+.dark{
+    background-color: #dadada;
+}
+.team{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    border-color: grey;
+        text-align: left;
+        width:100%;
+      padding:5px;
+      background-color: #dadada;
+    td{
+        padding-left:5px;
+    }
+
+    
+}
+.positions-for-teams-container{
+   background-color:  #f9f9fb;
+   width:33%
+}
+.positions-for-teams{
+    width:100%;
+
+}
+
+
+
+
+
+.bottom{
+   a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  .previous:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .next {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .round {
+    border-radius: 50%;
+  }
+}
+
+
+.player-projected-score{
+float:right;
+}
+
+.edit-lineup-button-container{
+    text-align: left;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #dadada;
+    margin-bottom:10px;
+    &:hover{
+        cursor:pointer;
+    }
+
+    a{
+        text-decoration: none;
+        color:black;
+
+
+
+    }
+}
+.click-lines-button{
+    background-color: #242424;
+    height:30px;
+    width:33%;
+    color:white;
+    text-align: center;
+    padding:7px;
+    border-right:#121212 solid 1.5px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.header-view-lines{
+    border-bottom: #242424 solid 1px;
+    margin-bottom: 3px;
+}
+.activated{
+    background-color: #ffffff;
+    color:black;
+}
+
+
+.view-lines-content{
+    padding-top: 10px;
+    padding-bottom:30px
+}
+.edit-lineup-button-container{
+    background-color:#242424;
+    opacity:1;
+    &:hover{
+        opacity:.9
+    }
+}

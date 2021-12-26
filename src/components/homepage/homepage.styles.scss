@@ -1,0 +1,156 @@
+
+@media screen and (min-width: 700px) {
+  .set-lineup-homepage {
+    width: 250px;
+  }
+  .homepage-bar{
+    width:55%;
+    margin-left:20%
+  }
+  .homepage-bar-right{
+    width:55%;
+    margin-right:20%
+  }
+  .home-text-a{
+    width:240px
+  }
+  .home-text-b{
+    width:440px
+  }
+ 
+}
+
+
+@media screen and (max-width: 700px) {
+  .home-text-a{
+    width:170px
+  }
+  .home-text-b{
+    width:340px
+  }
+  .homepage {
+  }
+  .homepage-bar{
+    width:55%;
+  }
+  .homepage-bar-right{
+    width:55%;
+  }
+  .jumbotron {
+    width: 80%;
+    margin-left: 10%;
+    background-color: #f5f5f7;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .set-lineup-homepage {
+    width: 250px;
+    height: 48.84px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .jumbotron {
+    width: 60%;
+    margin-left: 20%;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 7px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
+  .homepage {
+    overflow: auto;
+  }
+  .homepage-title-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+
+  .homepage-title {
+    width: 420px;
+    height: 40px;
+    padding-top: 6px;
+  }
+}
+
+.homepage {
+  background-color: #f5f5f7;
+  padding-bottom: 310px;
+
+  .set-lineup-homepage {
+    height: 40.48px;
+    width: 250px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 40.48px;
+    padding: 0 35px 0 35px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-family: "arial";
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &.google-sign-in {
+      background-color: #4285f4;
+      &:hover {
+        background-color: #357ae8;
+        border: none;
+      }
+
+      &.inverted {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+
+        &:hover {
+          background-color: black;
+          color: white;
+          border: none;
+        }
+      }
+    }
+  }
+}
+.title {
+  font-weight: bold;
+  font-size: 4vw;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.sub-header {
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 3vw;
+  color: blue;
+}
+
+.custom-button {
+  width: 200px;
+  margin: 1rem auto;
+  margin-top: 1rem;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  font-size: 17px;
+  font-family: Open Sans Condensed, sans-serif;
+  letter-spacing: 2px;
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-google {
+  margin-bottom: 8px;
+}

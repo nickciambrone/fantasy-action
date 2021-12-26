@@ -1,0 +1,159 @@
+.player-options-top{
+  background-color:white;
+
+}
+.player-options-content{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
+
+
+@media screen and (max-width: 895px) {
+  .is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+    background-color: #ffffff !important;
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+  .search-box-container{
+    width:50%;
+    margin-left: 50%;
+    margin-top: 8px;
+    input{
+      width:100%;
+    }
+  }
+  .player-options-top{
+    display: flex;
+    flex-direction: column;
+  }
+  .change-format-button-container{
+    width:48%;
+    margin-right:1%
+  }
+  .player-options{
+    input{
+      margin-top: 2px;
+    }
+  
+  }
+  .pill{
+    width:100%
+  }
+}
+@media screen and (min-width: 895px) {
+  .view-lines-button-container{
+    margin-bottom: 15px;
+  
+  }
+  .view-lines-button {
+
+  }
+
+.search-box-container{
+  width:40%;
+  margin-left: 5%;
+  margin-top:5px;
+  input{
+    width:100%;
+  }
+}
+}
+.view-lines-button {
+    width: 100%;
+    height: 40px;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    padding: 0 10px 0 10px;
+    font-size: 15px;
+    background-color: #399117;
+    color: white;
+    opacity: 1;
+    text-transform: uppercase;
+    font-family: 'arial';
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+ 
+    &:hover {
+      opacity: .9;
+    }
+    &.google-sign-in{
+        background-color: #4285f4;
+        &:hover{
+            background-color: #357ae8;
+            border:none
+        }
+    }
+    &.inverted{
+      background-color: white;
+      color:black;
+      border: 1px solid black;
+
+      &:hover{
+        background-color:#242424;
+        color:white;
+        border:none
+      }
+    }
+  }
+  
+  
+
+
+  @media screen and (max-width: 500px) {
+    .top-buttons-player-option{
+
+      position:static
+    }
+    .search{
+      width:45%;
+      margin-left:55%
+    }
+   
+    .view-lines-button-link{
+      width:48%;
+      margin-left: 1%;
+
+    }
+    .change-format-button-container{
+      width:47%;
+
+
+    }
+
+    .view-lines-button {
+    }
+    .view-lines-button-container {
+      display:flex;
+      margin-bottom:8px;
+    }
+    .player-options-content{
+    }
+  }
+  @media screen and (min-width: 500px) {
+ 
+    .search{
+      width:50%;
+      margin-left:70%
+    }
+
+    .view-lines-button-link{
+      width:31%;
+      margin-left: 2%;
+      margin-right: 1%;
+
+    }
+  }
+
+  .change-format-button-container{
+    display: flex;
+    flex-direction: row;
+  }

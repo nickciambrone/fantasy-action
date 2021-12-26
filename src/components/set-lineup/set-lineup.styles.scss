@@ -1,0 +1,173 @@
+
+@media screen and (max-width: 895px) {
+    .set-lineup{
+        display: flex;
+        flex-direction: column;
+        height:1000px;
+
+        .chose-team-and-rosters{
+            width: 96%;
+            margin-left: 2%;
+            margin-top: 5px;
+
+            }
+    }
+    .player-options-container{
+        width:96%;
+        margin-left:2%;
+    }
+    #my-team{
+        width:45%
+    }
+    #opponent{
+        width:45%
+    }
+   
+}
+@media screen and (min-width: 895px) {
+    .set-lineup{
+        display: flex;
+        flex-direction: row;
+        height:613px;
+        padding:0 10px
+    }
+        .chose-team-and-rosters{
+            width: 47%;
+            margin-right: 1%;
+            margin-left: 2%;
+
+            }
+            .player-options-container{
+                width:47%;
+                margin-left: 1%;
+                margin-right:2%
+            }
+}
+
+.set-lineup{
+    padding-top:10px;
+
+}
+
+
+
+.choose-team{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    margin-bottom: 10px;
+
+ 
+}
+
+
+.my-team{
+    border-radius: 2.5px;
+    padding: 14px;
+    border: 1px black solid;
+    color: white;
+    width: 30%;
+    height: 45px;
+    margin-right: 2px;
+    background-color: #3b3b3b;
+
+    &.active{
+        color: white;
+        background-color:#3b3b3b;
+        border: 2px gold solid;
+    }
+}
+.opponent{
+    // border-top-right-radius: 25px;
+    // border-bottom-right-radius: 25px;
+    border-radius: 2.5px;
+    padding: 14px;
+    border: 1px black solid;
+    color: white;
+    height: 45px;
+    background-color: #3b3b3b;
+
+    width: 30%;
+    margin-left: 2px;
+    &.active{
+        color: white;
+        background-color:#3b3b3b;
+        border: 2px gold solid;
+
+    }
+
+}
+.lineup-choice{
+    cursor: pointer;
+}
+.roster{
+    display: flex;
+    flex-direction: column;
+}
+.search{
+    float: right;
+    padding: 5px 10px 5px 10px;
+    margin: 0;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: padding;
+    border-radius: 3px;
+    background-clip: padding-box;
+    height: 32px;
+}
+.card-list{
+    height: 285px;
+    overflow-y: scroll;
+
+}
+.position-options{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    padding: 2px 20px 0 20px;
+    font-size: 14px;
+    height: 32px;
+    width: 75%;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 13px;
+    line-height: 32px;
+    font-family: arial, helvetica, sans-serif;
+}
+.position-option{
+cursor: pointer;
+color: #777777;
+&:hover{
+    color: blue;
+}
+}
+.position-label{
+    font-size: 14px;
+    font-style:normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight:bold;
+    font-stretch:normal;
+    font-size: 13px;
+    line-height: 32px;
+    font-family: arial, helvetica, sans-serif;
+}
+.choose-player{
+    display: flex;
+}
+.player-options-top{
+    display: flex;
+}
+.player-options-content{
+    border-radius: 4px;
+}

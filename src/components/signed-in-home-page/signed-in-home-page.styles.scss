@@ -1,0 +1,25 @@
+.signed-in-home-page{
+
+}
+@media screen and (min-width: 895px) {
+    .signed-in-home-page-content{
+        width:65%;
+        margin-left:17.5%;
+
+    }
+    
+}
+@media screen and (max-width: 895px) {
+    .signed-in-home-page-content{
+        display:flex;
+    flex-direction:column;
+    background-color:#dadada; 
+    padding-bottom:15px;
+    padding-top:8px;
+    width:97%;
+    margin-left:1.5%
+    }
+
+}
+
+

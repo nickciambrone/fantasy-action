@@ -1,0 +1,25 @@
+@media screen and (min-width: 895px) {
+
+.lineups{
+    width: 64%;
+    margin-left:1.5%;
+    margin-right:1.5%
+
+}
+.select-receipt-type-container{
+    width:30%;
+    margin-left:1.5%;
+    margin-right:1.5%;
+    margin-top:10px
+}
+.bet-info-card-details{
+    width:33.33%;
+    margin-left:33.33%;
+}
+.switcher-and-lineups{
+    display:flex;
+    flex-direction: row;
+    margin-top:4px
+}
+
+}

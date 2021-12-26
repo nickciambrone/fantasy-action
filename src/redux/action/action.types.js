@@ -1,0 +1,11 @@
+const ActionActionTypes ={
+    ADD_BET:'ADD_BET',
+    DELETE_BET:'DELETE_BET',
+    TOGGLE_CLEAR_BET_WARNING:'TOGGLE_CLEAR_BET_WARNING',
+    CLEAR_BETS:'CLEAR_BETS',
+    UPDATE_WAGER:'UPDATE_WAGER',
+    SET_BETS_FALSE:'SET_BETS_FALSE'
+
+}
+
+export default ActionActionTypes

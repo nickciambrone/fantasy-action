@@ -1,0 +1,48 @@
+.card-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #dadada;
+    border: 1px solid grey;
+    border-radius: 5px;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
+  .enabled{
+    .glyphicon-plus{
+      padding: 10px;
+      color:green;
+      font-size:15px;
+      &:hover{
+        opacity: .9;
+        font-size: 18px;
+        color: red;
+        cursor: pointer;
+
+  
+      }
+    }
+  }
+  
+  .enabled:hover {
+    transform: scale(1.05);
+  }
+  .position-and-team{
+    font-size: 15px;
+    padding: 10px;
+
+  }
+  .player-name{
+    font-size: 15px;
+    padding: 10px;
+  }
+  
+  .disabled{
+    opacity: .41;
+    cursor: not-allowed;
+    .glyphicon-plus{
+      padding: 10px;
+      color:green;
+      font-size:15px;}
+  }

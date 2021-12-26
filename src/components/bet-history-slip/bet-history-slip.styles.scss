@@ -1,0 +1,58 @@
+.bet-history-slip{
+    background-color: white;
+    border-radius: 3px;
+    padding: 2px 5px;
+    color:black;
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-bottom:4px;
+    width:97%;
+margin-left:1.5%;
+display: flex;
+flex-direction: column;
+text-align: left;
+margin-top:1px;
+
+
+}
+
+.left-history-container{
+    width:80%;
+}
+.edit-button{
+    &:hover{
+        cursor:pointer;
+    }
+}
+svg{
+    &:hover{
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 895px) {
+    .edit-button{
+        margin-top:33px;
+    }
+
+
+.bet-history-email-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding:6px;
+    height:55px;
+    width:100%
+
+}
+
+}
+@media screen and (min-width: 895px) {
+    .bet-history-email-container{
+        background-color: white;
+        height:55px;    
+        padding:12px 6px;
+
+
+    }
+
+}

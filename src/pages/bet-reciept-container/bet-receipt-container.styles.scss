@@ -1,0 +1,126 @@
+.bet-receipt-container{
+    color:white;
+}
+
+
+.receipt-type{
+    width:100%;
+    padding:5px;
+
+}
+.receipt-type-header{
+    background-color: white; 
+    color:black;
+    border-bottom: black solid 1px;
+    &:hover{
+   
+    cursor:pointer   
+    } 
+}
+.bet-receipt-grid{padding-top:10px}
+
+@media screen and (max-width: 895px) {
+    .edit-lineup-button-container{
+        width:46.5%
+    }
+   
+    .cfbb{
+        width:46.5%
+    }
+    .bet-receipt-grid{
+        display: flex;
+        flex-direction: column;
+    }
+    form{
+        width:94%;
+        margin-left: 3%;
+    }
+    .bet-receipts{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .receipt-type{
+        font-size:14px;
+    }
+    .select-receipt-type-container{
+        width:86%;
+        margin-left:7%;
+        margin-top:10px;
+        margin-bottom: 10px;
+    }
+    .check-bets{
+        width:94%;
+        margin-left: 3%;
+        margin-top:5px;
+    }
+    .back-buttons-bet-receipt{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+  
+}
+@media screen and (min-width: 895px) {
+    .back-buttons-bet-receipt{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+    }
+ 
+    .select-receipt-type-container-br{
+        width:90%;
+        margin-left: 5%;
+        margin-bottom: 10px;
+
+    }
+  
+    .receipt-type{
+        font-size:17px;
+    }
+    .enter-emails{
+        width:47%;
+        margin-left: 2%;
+        margin-right: 1%;
+
+    }
+    .bet-receipt-grid{
+        display: flex;
+        flex-direction: row;
+    }
+    .check-bets{
+        width:47%;
+        margin-left: 1%;
+        margin-right: 2%;
+
+    }
+}
+
+.bet-receipt{
+    text-align: center;
+}
+.highlighted{
+    background-color: black;
+    color:white;
+}
+.edit-wagers-button{
+    background-color: #399117;
+    color:white;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        &:hover{
+        cursor:pointer;
+    }
+}
+.highlighted-bet{
+    background-color: white;
+    
+}
+
+.receipt-info-nav-item{
+    background-color: #242424;
+    opacity:1;
+    &:hover{
+        opacity:.9
+    }
+}
