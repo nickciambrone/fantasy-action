@@ -9,11 +9,7 @@ class BetDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: Object.keys(this.props.betHistory
-        .filter(
-          (ele) => ele["createdAt"].seconds == this.props.match.params.betId
-        )[0]
-        .betSlip).map((ele) => this.props.betHistory.betSlip[ele]["type"])[0],
+      type: this.props.betHistory.filter(ele=>ele['createdAt']['seconds']==this.props.match.params.betId)[0]['betSlip'][0]['type']
     };
   }
   componentDidMount = () => {
@@ -21,7 +17,8 @@ class BetDetails extends React.Component {
   };
 
   render() {
-
+console.log(this.props.betHistory)
+  console.log(this.props.match.params.betId)
     const toDateTime = (secs) => {
       var t = new Date(1970, 0, 1); // Epoch
       t.setSeconds(secs);
@@ -30,7 +27,6 @@ class BetDetails extends React.Component {
     const activeBet = this.props.betHistory.filter(
       (ele) => ele["createdAt"].seconds == this.props.match.params.betId
     )[0];
-    console.log(activeBet);
 
     let betPlacedAt = JSON.stringify(
       toDateTime(
@@ -52,8 +48,8 @@ class BetDetails extends React.Component {
       .replace('20:','8:')
       .replace('21:','9:')
       .replace('22:','10:')
-
-    let betTypes = Object.keys(activeBet.betSlip).map((ele) => console.log(ele));
+console.log(activeBet)
+    let betTypes = Object.keys(activeBet.betSlip).map((ele) => activeBet.betSlip[ele]['type']);
     console.log(betTypes);
     return (
       <div className="bet-details">
