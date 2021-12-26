@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import "./header.styles.scss";
 import { signInWithGoogle } from "../../firebase/firebase.utils";
 import { auth } from "../../firebase/firebase.utils";
-
- const Header = ({ currentUser }) => {
+import {withRouter} from 'react-router-dom'
+ const Header = ({ currentUser, history }) => {
   console.log(currentUser);
   return (
     <div className="header">
@@ -20,7 +20,7 @@ import { auth } from "../../firebase/firebase.utils";
       <img height="40px" src={logo} alt="Logo" />
     </Link>
         {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
+          <div className="option" onClick={() =>{ auth.signOut(); history.push('/home')}}>
             SIGN OUT
           </div>
         ) : (
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
 });
 
-export default connect(mapStateToProps, null)(Header);
+export default withRouter(connect(mapStateToProps, null)(Header));
