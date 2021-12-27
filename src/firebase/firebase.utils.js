@@ -66,6 +66,7 @@ const config = {
     }
     catch(error){
       console.log('error: ', error.message)
+      return false;
 
     }
 

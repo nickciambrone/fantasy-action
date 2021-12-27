@@ -35,14 +35,21 @@ class EmailForm extends React.Component {
       this.state.userEmail,
       this.state.opponentEmail
     );
+    if (betRef){
 
     betRef.onSnapshot((snapShot) => {
       console.log(snapShot);
-      this.props.updateBetHistory({
-        ...snapShot.data(),
-      });
+        this.props.updateBetHistory({
+          ...snapShot.data(),
+        });
+      
+     
     });
     this.setState({betSubmitted:true})
+  }
+  else{
+    alert('Bet not submitted, please try again')
+  }
   };
 
   render() {
