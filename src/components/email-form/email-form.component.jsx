@@ -48,7 +48,7 @@ class EmailForm extends React.Component {
     this.setState({betSubmitted:true})
   }
   else{
-    alert('Bet not submitted, please try again')
+    alert('Bet not submitted, refresh the page and try again')
   }
   };
 
