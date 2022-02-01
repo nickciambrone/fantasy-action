@@ -5,11 +5,18 @@ import "./bet-receipt-container.styles.scss";
 import BetCard from "../../components/bet-card/bet-card.component";
 import { withRouter } from "react-router-dom";
 import EmailForm from "../../components/email-form/email-form.component";
-
+import Sidebar from "../../components/sidebar/sidebar.component";
 import Header from "../../components/header/header.component";
-
+import { updateBetHistory } from "../../redux/user/user.action.js";
+import {
+  signInWithGoogle,
+  addBetToUserObject,
+} from "../../firebase/firebase.utils.js";
 import ChangeFormatButton from "../../components/change-format-button/change-format-button.component.js";
-import { setBetsFalse } from "../../redux/action/action.actions.js";
+import { setBetsFalse, clearBets } from "../../redux/action/action.actions.js";
+import SignIn from "../../components/sign-in/sign-in.component.jsx";
+import SignUp from "../../components/sign-up/sign-up.component.jsx";
+
 class BetReceiptContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -19,49 +26,60 @@ class BetReceiptContainer extends React.Component {
   }
   componentDidMount = () => {
     window.scrollTo(0, 0);
-    
+  };
+
+  placeWager = async () => {
+    const betRef = await addBetToUserObject(
+      this.props.betSlip,
+      this.props.userTeam,
+      this.props.opponentTeam,
+      this.props.currentUser.id,
+      "",
+      ""
+    );
+    if (betRef) {
+      await betRef.onSnapshot((snapShot) => {
+        console.log(snapShot);
+        this.props.updateBetHistory({
+          ...snapShot.data(),
+        });
+      });
+      this.props.clearBets();
+      this.props.history.push("/home");
+    } else {
+      alert("Bet not submitted, refresh the page and try again");
+    }
   };
 
   render() {
-    let { betSlip, history, setBetsFalse } = this.props;
+    let {
+      betSlip,
+      history,
+      setBetsFalse,
+      userTeam,
+      opponentTeam,
+      currentUser,
+      updateBetHistory,
+    } = this.props;
     let bets = betSlip.map((ele) => ele["type"]);
     console.log(this.state.type);
 
     return (
       <div className="bet-receipt-container">
         <Header />
-        <div className="bet-receipt-grid">
-          <div
-            className="enter-emails"
-            style={{
-              color: "#45403d",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <div className="back-buttons-bet-receipt">
-              <div className="cfbb">
-                <ChangeFormatButton />
-              </div>
-              <div
-                className="edit-lineup-button-container"
-                style={{
-                  fontWeight: "bolder",
-                  backgroundColor:'#242424',
-                  fontSize: "15px",
-                  color: "white",
-                  height: "40px",
-                  textAlign: "center",
-                }}
-                onClick={() => {
-                  setBetsFalse();
-                  history.push("/set-lineup");
-                }}
-              >
-                &laquo; Edit Lineup
-              </div>
-            </div>
-            <EmailForm />
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <div style={{ width: "17%" }}>
+            <Sidebar />
+          </div>
+          {!currentUser ? <div class="sign-in-sign-up-new">
+            <SignIn />
+            <SignUp />
+          </div> : ""}
+          <div>
+            {" "}
+            
+          </div>
+          <div>
           </div>
           <div className="check-bets">
             <div className="bet-slip">
@@ -124,53 +142,36 @@ class BetReceiptContainer extends React.Component {
                 ))}
               </div>
               <div className="select-receipt-type-container-br">
-                <div
-                  className="receipt-type-header"
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-evenly",
-                  }}
-                >
-                  {bets.map((ele) => (
-                    <div
-                      className="receipt-info-nav-item"
+                {currentUser ? (
+                  <button
+                    style={{
+                      width: "120px",
+                      padding: "8px 15px",
+                      backgroundColor: "#53d337",
+                      color: "#061004",
+                      fontFamily: "arial",
+                      fontWeight: "bolder",
+                      borderRadius: "5px",
+                      fontSize: "14px",
+                    }}
+                    onClick={() => this.placeWager()}
+                  >
+                    Submit
+                  </button>
+                ) : (
+                  <div style={{ display: "flex" }}>
+                    <h4
                       style={{
-                        width: "100%",
-                        borderRight: ".5px solid black",
-                        display: "flex",
-                        flexDirection: "column",
-                        color: "white",
+                        width: "25%",
+                        marginLeft: "37.5%",
+                        padding: "8px 15px",
+                        fontWeight: "bolder",
                       }}
-                      onClick={() => this.setState({ type: ele })}
                     >
-                      <span className="receipt-type" id={ele}>
-                        {ele}
-                      </span>
-                      {console.log(ele)}
-                      {console.log(this.state.type)}
-                      <span
-                        className={`bet-type-nav ${
-                          this.state.type === ele ? "highlighted-bet" : ""
-                        }`}
-                        style={{
-                          width: "75%",
-                          marginLeft: "12.5%",
-                          height: "3px",
-                        }}
-                      ></span>
-                    </div>
-                  ))}
-                </div>
-                <div className="bet-summary">
-                  {betSlip.map((ele) =>
-                    ele["type"] === this.state.type ? (
-                      <BetReceipt bet={ele} />
-                    ) : (
-                      ""
-                    )
-                  )}
-                </div>
+                      Sign up or Log in to place bets
+                    </h4>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -182,9 +183,15 @@ class BetReceiptContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
   betSlip: state.action.slip,
+  userTeam: state.lineup.userTeam,
+  opponentTeam: state.lineup.opponentTeam,
+  currentUser: state.user.currentUser,
 });
+
 const mapDispatchToProps = (dispatch) => ({
+  updateBetHistory: (bet) => dispatch(updateBetHistory(bet)),
   setBetsFalse: () => dispatch(setBetsFalse()),
+  clearBets: () => dispatch(clearBets()),
 });
 
 export default withRouter(

@@ -12,53 +12,9 @@ const actionReducer = (state = INITIAL_STATE, action) => {
     case ActionActionTypes.ADD_BET:
       console.log(action.payload);
       if (!state.slip.map((ele) => ele["id"]).includes(action.payload.id)) {
-        if (action.payload["id"] === "su") {
-          return {
-            ...state,
-            slip: [...state.slip, action.payload].filter(
-              (ele) => ele["id"] !== "so"
-            ),
-          };
-        }
-        if (action.payload["id"] === "so") {
-          return {
-            ...state,
-            slip: [...state.slip, action.payload].filter(
-              (ele) => ele["id"] !== "su"
-            ),
-          };
-        }
-        if (action.payload["id"] === "o") {
-          return {
-            ...state,
-            slip: [...state.slip, action.payload].filter(
-              (ele) => ele["id"] !== "u"
-            ),
-          };
-        }
-        if (action.payload["id"] === "u") {
-          return {
-            ...state,
-            slip: [...state.slip, action.payload].filter(
-              (ele) => ele["id"] !== "o"
-            ),
-          };
-        }
-        if (action.payload["id"] === "mu") {
-          return {
-            ...state,
-            slip: [...state.slip, action.payload].filter(
-              (ele) => ele["id"] !== "mo"
-            ),
-          };
-        }
-        if (action.payload["id"] === "mo") {
-          return {
-            ...state,
-            slip: [...state.slip, action.payload].filter(
-              (ele) => ele["id"] !== "mu"
-            ),
-          };
+        return {
+          ...state,
+          slip:[...state.slip, action.payload]
         }
       } else {
         return state;
@@ -80,6 +36,8 @@ const actionReducer = (state = INITIAL_STATE, action) => {
         ...state,
         clearBetWarning: false,
         slip: [],
+        betPlaced:false
+
       };
     case ActionActionTypes.UPDATE_WAGER:
       return {

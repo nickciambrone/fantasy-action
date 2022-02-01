@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import Header from '../../components/header/header.component'
 import TitleContainer from '../../components/title-container/title-container.component'
 import './set-lineup-container.styles.scss'
-
+import Sidebar from '../../components/sidebar/sidebar.component'
 const SetLineUpContainer = ({formatSelected}) =>{
     console.log(formatSelected)
 
@@ -14,7 +14,7 @@ const SetLineUpContainer = ({formatSelected}) =>{
         <div className='set-lineup-container'>
         
         
-        {formatSelected ? <div> <Header /><SetLineup enableResetScrollToCoords={false}/> </div>: <div><TitleContainer /> <SelectFormat/></div>}
+        {formatSelected ? <div> <Header /><SetLineup enableResetScrollToCoords={false}/> </div>:<div><Header /> <div className='sb-sf-container'> <Sidebar/><SelectFormat/></div></div>}
         </div>
     )
 }

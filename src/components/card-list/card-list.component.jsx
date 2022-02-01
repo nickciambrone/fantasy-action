@@ -17,13 +17,8 @@ import {setTeamsFull} from '../../redux/lineup/lineup.actions'
         }
     }
     
-    let oppTeamFull=true
-    for (const prop in this.props.opponentTeam){
-        if (this.props.opponentTeam[prop]['name']===''){
-          oppTeamFull=false
-        }
-    }
-    if (userTeamFull && oppTeamFull){
+   
+    if (userTeamFull ){
       this.props.setTeamsFull('true');
     }
     else{

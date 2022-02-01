@@ -37,52 +37,6 @@ const PlayerOptions = ({
 
   return (
     <div className="player-options">
-      <div
-        className="view-lines-button-container"
-        style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
-      >
-        <div
-          className="top-buttons-player-options"
-          style={{ display: "flex", width: "100%" }}
-        >
-          <div className="change-format-button-container">
-            {" "}
-            <ChangeFormatButton />
-          </div>
-
-          <div className="view-lines-button-link">
-            {" "}
-            {teamsFull === "true" ? (
-              <button
-                onClick={() => {
-                  changePosition("All");
-                  history.push("/view-lines");
-                }}
-                className="view-lines-button"
-              >
-                View Lines
-              </button>
-            ) : (
-              <button
-                style={{ opacity: ".3", cursor: "not-allowed" }}
-                className="view-lines-button"
-              >
-                View Lines
-              </button>
-            )}
-          </div>
-        </div>
-        <div className="search-box-container">
-          <input
-            className="search"
-            type="search"
-            placeholder="Search Player"
-            onChange={handleChange}
-          ></input>
-        </div>
-
-        <div></div>
-      </div>
 
       <div className="player-options-content">
         <div className="player-options-top">

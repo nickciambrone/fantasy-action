@@ -6,9 +6,9 @@ import { withRouter } from "react-router-dom";
 import { setFormatFalse } from "../../redux/lineup/lineup.actions";
 import { setBetsFalse } from "../../redux/action/action.actions";
 import {changePosition} from '../../redux/lineup/lineup.actions'
+import './change-format.styles.scss';
 
-
-function ChangeFormatButton({ history, setFormatFalse, changePosition }) {
+function ChangeFormatButton({ history, setFormatFalse, changePosition, activeGreen }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -16,9 +16,10 @@ function ChangeFormatButton({ history, setFormatFalse, changePosition }) {
 
   return (
     <div style = {{width:'100%'}}>
-      <Button style = {{height:'40px', width:'100%', borderRadius:'0', color:'white', fontFamily:'arial', fontSize:'15px', fontWeight: 'bolder', backgroundColor:'#242424', borderColor:'#242424'}} className = 'change-format-button-link' onClick={handleShow}>
-      &laquo; Edit Format
-      </Button>
+      <div style = {{ color:'white', fontFamily:'var(--bs-body-font-family)', fontSize:'15px',  backgroundColor:'transparent', border:'none', display:'flex', flexDirection:'row', justifyContent:'center'}} className = 'change-format-button-link' onClick={handleShow}>
+      <div style ={{marginRight:'5px', backgroundColor:'#1a411a',padding:'3px', height:'30px', width:'30px', borderRadius:'30px'}}>&#49; </div> 
+      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} className = {`${activeGreen ? 'activeGreen' : ''}`}> Set Format</div> 
+      </div>
         <Modal show={show} onHide={handleClose} animation={false}>
           <Modal.Body>
             Are you sure you want to change format? The draft will start over

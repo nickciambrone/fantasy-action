@@ -21,38 +21,13 @@ class BetCard extends React.Component {
     tempBet["amount"] = parseFloat(event.target.value);
     tempBet["toWin"] = this.calculateReturn(
       event.target.value,
-      this.calculateMoneyline(this.props.difference, this.props.bet.id)
+      this.props.bet.line
     );
 
     this.props.updateWager(tempBet);
   };
 
-  calculateMoneyline = (difference, betID) =>
-    ["su", "so", "o", "u"].includes(betID)
-      ? "-110"
-      : difference < -20 && betID === "mu"
-      ? "-800"
-      : difference < -10 && betID === "mu"
-      ? "-300"
-      : difference < 0 && betID === "mu"
-      ? "-170"
-      : difference < 10 && betID === "mu"
-      ? "+170"
-      : difference < 20 && betID === "mu"
-      ? "+300"
-      : difference <= 900 && betID === "mu"
-      ? "+800"
-      : difference < -20 && betID === "mo"
-      ? "+800"
-      : difference < -10 && betID === "mo"
-      ? "+300"
-      : difference < 0 && betID === "mo"
-      ? "+170"
-      : difference < 10 && betID === "mo"
-      ? "-170"
-      : difference < 20 && betID === "mo"
-      ? "-300"
-      : "-800";
+  
   calculateReturn = (amount, moneyline) => {
     return parseInt(moneyline) > 0
       ? Math.round((parseInt(moneyline) / 100) * amount * 100) / 100
@@ -73,6 +48,7 @@ class BetCard extends React.Component {
       checkAllBetAmountsPresent,
       xBetPresent,
       allowOnChange,
+      selectUserTotalProjected
     } = this.props;
     console.log(checkAllBetAmountsPresent);
     return (
@@ -137,14 +113,17 @@ class BetCard extends React.Component {
                   : ""}
               </b>
             </div>
-            <div className="bet-type" style={{ textAlign: "left" }}>
+            <div className="bet-type" style={{ textAlign: "left", display:'flex', flexDirection:'column' }}>
               <b>
-                {bet.id === "su" || bet.id === "so"
-                  ? "SPREAD"
-                  : bet.id === "o" || bet.id === "u"
-                  ? "TOTAL"
-                  : "MONEYLINE"}
-              </b>
+                {bet.id.includes('0') ? "OVER" : "UNDER"}
+                </b>
+            <span>
+            {bet.id.includes('a') ? Math.round((selectUserTotalProjected-20)*100)/100 :''}
+            {bet.id.includes('b') ? Math.round((selectUserTotalProjected)*100)/100 :''}
+            {bet.id.includes('c') ? Math.round((selectUserTotalProjected+20)*100)/100 :''}
+
+            </span>
+
             </div>
           </div>
           <div
@@ -161,7 +140,7 @@ class BetCard extends React.Component {
                 fontWeight: "800",
               }}
             >
-              {this.calculateMoneyline(difference, bet.id)}
+              {bet.line<0 ? bet.line : '+'+bet.line}
             </div>
 
             <div style={{ display: "flex", flexDirection: "column" }}>

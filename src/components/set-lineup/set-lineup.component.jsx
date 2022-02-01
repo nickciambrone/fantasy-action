@@ -7,6 +7,10 @@ import { connect } from "react-redux";
 import PlayerOptions from "../player-options/player-options.component";
 import { changeTeam } from "../../redux/lineup/lineup.actions";
 import { setTeamsFull } from "../../redux/lineup/lineup.actions";
+import Sidebar from "../sidebar/sidebar.component";
+import ChangeFormatButton from "../change-format-button/change-format-button.component";
+import { withRouter } from "react-router-dom";
+import { changePosition } from "../../redux/lineup/lineup.actions";
 
 class SetLineup extends React.Component {
   constructor() {
@@ -18,10 +22,9 @@ class SetLineup extends React.Component {
   handleChange = (e) => {
     this.setState({ searchField: e.target.value });
   };
-  componentDidMount = ()=>{
+  componentDidMount = () => {
     window.scrollTo(0, 0);
-  }
-
+  };
 
   render() {
     const {
@@ -29,6 +32,9 @@ class SetLineup extends React.Component {
       positions,
       positionSelected,
       changeTeam,
+      teamsFull,
+      changePosition,
+      history,
     } = this.props;
     // let filteredPlayers = players.filter((ele, ind) => positionSelected==='All' ? ele.name.length>1 : ele.position === positionSelected)
     console.log(team);
@@ -37,18 +43,23 @@ class SetLineup extends React.Component {
       player.name.toLowerCase().includes(this.state.searchField.toLowerCase())
     );
     if (positionSelected === "All") {
-      filteredPlayers = players.filter((player) =>
-        player.name.toLowerCase().includes(this.state.searchField.toLowerCase())
-        && ((positions.includes(player.position)) || (player.position==="DE" && positions.includes('DEF')))
-
+      filteredPlayers = players.filter(
+        (player) =>
+          player.name
+            .toLowerCase()
+            .includes(this.state.searchField.toLowerCase()) &&
+          (positions.includes(player.position) ||
+            (player.position === "DE" && positions.includes("DEF")))
       );
     } else {
       filteredPlayers = players
-        .filter((player) =>
-          player.name
-            .toLowerCase()
-            .includes(this.state.searchField.toLowerCase())
-            && ((positions.includes(player.position)) || (player.position==="DE" && positions.includes('DEF')))
+        .filter(
+          (player) =>
+            player.name
+              .toLowerCase()
+              .includes(this.state.searchField.toLowerCase()) &&
+            (positions.includes(player.position) ||
+              (player.position === "DE" && positions.includes("DEF")))
         )
         .filter(
           (player) =>
@@ -59,46 +70,63 @@ class SetLineup extends React.Component {
 
     return (
       <div className="set-lineup">
-     
-<div className = 'player-options-container'>
-<i aria-hidden="true" role="presentation" class="eicon-menu-bar"></i>
-        <PlayerOptions
-          filteredPlayers={filteredPlayers}
-          positions={positions}
-          positionSelected={positionSelected}
-          handleChange={this.handleChange}
-          enableResetScrollToCoords={false}
-        />
+        <div className="sidebar-container-sl">
+          <Sidebar />
         </div>
-        <div className="chose-team-and-rosters">
-        <div className="choose-team" style = {{display:'flex'}}>
-          <div
-            id="my-team"
-            className={`${
-              team === "user" ? "active" : ""
-            } lineup-choice my-team`}
-            onClick={(e) => changeTeam(e)}
-          >
-            User Team
-          </div>
-          <div
-            id="opponent"
-            className={`${
-              team === "opponent" ? "active" : ""
-            } lineup-choice opponent`}
-            onClick={(e) => changeTeam(e)}
-          >
-            Opponent Team
-          </div>
-        </div>
-        <div className="roster">
-          <Rosters
-            team={team}
+        <div className="main-set-lineup">
+          {teamsFull === "true" ? (
+            <div className = 'select-wagers-next-button'
+              style={{
+                backgroundColor: "#53d337",
+                padding: "7px 15px",
+                borderRadius: "3px",
+                fontWeight: "bolder",
+                color: "#091606",
+                cursor: "pointer",
+                fontSize: "13px",
+              }}
+              onClick={() => history.push("/view-lines")}
+            >
+              {" "}
+              Select Wagers &raquo;
+            </div>
+          ) : (
+            ""
+          )}
+          <div className = 'player-area'>
+            <div className="player-options-container">
+              <input
+                className="search"
+                type="search"
+                placeholder="Search Player"
+                onChange={(e) => this.handleChange(e)}
+              />
 
-            // dropPlayer={dropPlayer}
-          />
+              <i
+                aria-hidden="true"
+                role="presentation"
+                class="eicon-menu-bar"
+              ></i>
+
+              <PlayerOptions
+                filteredPlayers={filteredPlayers}
+                positions={positions}
+                positionSelected={positionSelected}
+                handleChange={this.handleChange}
+                enableResetScrollToCoords={false}
+              />
+            </div>
+            <div className="chose-team-and-rosters">
+              <div className="roster">
+                <Rosters
+                  team={team}
+
+                  // dropPlayer={dropPlayer}
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
       </div>
     );
   }
@@ -116,6 +144,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   changeTeam: (e) => dispatch(changeTeam(e.target.id)),
   setTeamsFull: (item) => dispatch(setTeamsFull),
+  changePosition: (item) => dispatch(changePosition(item)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SetLineup);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SetLineup)
+);

@@ -4,3 +4,14 @@
 
 
 }
+@media screen and (min-width:680px){
+    .sb-sf-container{
+        display: flex;
+        flex-direction: row;
+        .sidebar{
+            width:17%
+        }
+        
+    }
+    
+}

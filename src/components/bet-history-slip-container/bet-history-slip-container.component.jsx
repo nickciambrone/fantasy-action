@@ -4,7 +4,8 @@ import BetHistorySlip from "../bet-history-slip/bet-history-slip.component";
 import PlusButton from "./plus-svgrepo-com.svg";
 import { connect } from "react-redux";
 import betSlipComponent from "../bet-slip/bet-slip.component";
-
+import Sidebar from "../sidebar/sidebar.component";
+import './bet-history-slip-container.styles.scss'
 class BetHistorySlipContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -42,6 +43,10 @@ class BetHistorySlipContainer extends React.Component {
   }
     return (
       <div className="bet-history-slip-container">
+      <div className= 'bhs-sidebar-container'>
+      <Sidebar/>
+      </div>
+      <div className = 'past-wagers-container'>
         <h3 style={{ marginTop: "5px" }}>Your past wagers:</h3>
 
         {tempBetSlip.length === 0 ? (
@@ -76,6 +81,7 @@ class BetHistorySlipContainer extends React.Component {
             onClick={() => history.push("/set-lineup")}
           />
         </div>
+      </div>
       </div>
     );
   }

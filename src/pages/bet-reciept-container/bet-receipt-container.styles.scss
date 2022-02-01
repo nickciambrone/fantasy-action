@@ -20,9 +20,7 @@
 .bet-receipt-grid{padding-top:10px}
 
 @media screen and (max-width: 895px) {
-    .edit-lineup-button-container{
-        width:46.5%
-    }
+  
    
     .cfbb{
         width:46.5%
@@ -62,6 +60,22 @@
   
 }
 @media screen and (min-width: 895px) {
+    .sign-in-sign-up-new{
+        margin-top: 17px;
+        display:flex;
+        flex-direction: row;
+        width:55%;
+        .sign-in{
+            width:46%;
+            margin-left:2%;
+            margin-right:2%;
+
+        }
+        .sign-up{
+            width:46%;
+            margin-left:2%;
+            margin-right:2%;        }
+    }
     .back-buttons-bet-receipt{
         width: 30%;
         display: flex;
@@ -71,7 +85,6 @@
     .select-receipt-type-container-br{
         width:90%;
         margin-left: 5%;
-        margin-bottom: 10px;
 
     }
   
@@ -89,7 +102,7 @@
         flex-direction: row;
     }
     .check-bets{
-        width:47%;
+        width:25%;
         margin-left: 1%;
         margin-right: 2%;
 
@@ -123,4 +136,14 @@
     &:hover{
         opacity:.9
     }
+}
+.sidebar{width:100%}
+
+.submit-sign-in{
+    padding:8px 18px;
+    border-radius: 2px;
+    background-color: black;
+    color:white;
+    font-weight: bolder;
+    font-size:medium
 }

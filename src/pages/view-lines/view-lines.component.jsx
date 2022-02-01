@@ -11,7 +11,7 @@ import Lineups from "../../components/lineups/lineups.component";
 import ViewLinesTile from "../../components/view-lines-tile/view-lines-tile.component";
 import ChangeFormatButton from "../../components/change-format-button/change-format-button.component.js";
 import Header from "../../components/header/header.component";
-
+import Sidebar from "../../components/sidebar/sidebar.component";
 class ViewLines extends React.Component {
   constructor(props) {
     super(props);
@@ -37,31 +37,16 @@ class ViewLines extends React.Component {
     return (
       <div className="view-lines">
         <Header />
+        <div className = 'view-lines-main'>
+        <div className = 'sidebar-container'>
+        <Sidebar/>
+       
+      </div>
         <div className="view-lines-content" style={{ display: "flex" }}>
           <div className="left-view-lines">
             <div className="left-top" style={{ marginBottom: "6px" }}>
-              <div className="back-buttons-view-lines">
-                <div className="change-format-button-container-vl">
-                  <ChangeFormatButton />
-                </div>
-
-                <div
-                  className="edit-lineup-button-container"
-                  style={{
-                    color:'white',
-                    fontWeight: "bolder",
-                    fontSize: "15px",
-                    height: "40px",
-                    textAlign: "center",
-                  }}
-                  onClick={() => {
-                    setBetsFalse();
-                    history.push("/set-lineup");
-                  }}
-                >
-                  &laquo; Edit Lineup
-                </div>
-              </div>
+             
+             
               <div className="line-card-holder-container">
                 <div
                   className="line-card-holder"
@@ -88,17 +73,6 @@ class ViewLines extends React.Component {
                       style={{ display: "flex", width: "100%" }}
                     >
                       <div style={{ width: "35%" }}></div>
-                      <div
-                        style={{
-                          width: "60%",
-                          display: "flex",
-                          textAlign: "center",
-                        }}
-                      >
-                        <div style={{ width: "33%" }}>SPREAD</div>
-                        <div style={{ width: "33%" }}>TOTAL</div>
-                        <div style={{ width: "33%" }}>MONEYLINE</div>
-                      </div>
                     </div>
                     <div style={{ display: "flex" }}>
                       <div
@@ -106,7 +80,8 @@ class ViewLines extends React.Component {
                         style={{
                           display: "flex",
                           flexDirection: "column",
-                          width: "35%",
+                          width: "15%",
+                          textAlign:'center'
                         }}
                       >
                         <span
@@ -116,10 +91,10 @@ class ViewLines extends React.Component {
                             marginBottom: "3px",
                           }}
                         >
-                          User{" "}
+                          Over{" "}
                         </span>
                         <span style={{ padding: "7px", height: "30px" }}>
-                          Opponent{" "}
+                          Under{" "}
                         </span>
                       </div>
                       <div
@@ -128,127 +103,54 @@ class ViewLines extends React.Component {
                           display: "flex",
                           flexDirection: "row",
                           flexWrap: "wrap",
-                          width: "65%",
+                          width: "85%",
                         }}
                       >
-                        <ViewLinesTile
-                          id="su"
-                          type="Spread"
-                          line={
-                            difference > 0
-                              ? "+" + Math.round(difference * 100) / 100
-                              : Math.round(difference * 100) / 100
-                          }
-                          spread={difference}
-                        >
-                          {difference > 0
-                            ? "+" + Math.round(difference * 100) / 100
-                            : Math.round(difference * 100) / 100}
+                        <ViewLinesTile id="0a" type="O/U" line={-175}>
+                          O {(Math.round((total-20)*100))/100} <span style={{ color: "green" }}>-175</span>
+
+                        </ViewLinesTile>
+                        <ViewLinesTile id="0b" type="O/U" line={-125}>
+                          O {Math.round(total * 100) / 100} 
+                          <span style={{ color: "green" }}> -125</span>
                         </ViewLinesTile>
 
-                        <ViewLinesTile
-                          id="o"
-                          type="O/U"
-                          line={Math.round(total * 100) / 100}
-                        >
-                          O {Math.round(total * 100) / 100}
-                        </ViewLinesTile>
+                        <ViewLinesTile id="0c" type="O/U" line={155}>
+                        O {(Math.round(total * 100) / 100)+20} 
+                        <span style={{ color: "green" }}> +155</span>
+                      </ViewLinesTile>
 
-                        <ViewLinesTile
-                          id="mu"
-                          type="Moneyline"
-                          line={
-                            difference < -20
-                              ? "-800"
-                              : difference < -10
-                              ? "-300"
-                              : difference < 0
-                              ? "-170"
-                              : difference < 10
-                              ? "+170"
-                              : difference < 20
-                              ? "+300"
-                              : "+800"
-                          }
-                        >
-                          {difference < -20
-                            ? "-800"
-                            : difference < -10
-                            ? "-300"
-                            : difference < 0
-                            ? "-170"
-                            : difference < 10
-                            ? "+170"
-                            : difference < 20
-                            ? "+300"
-                            : "+800"}
-                        </ViewLinesTile>
-                        <ViewLinesTile
-                          id="so"
-                          type="Spread"
-                          line={
-                            difference > 0
-                              ? Math.round(difference * 100) / -100
-                              : "+" + Math.round(difference * 100) / -100
-                          }
-                          spread={difference}
-                        >
-                          {difference > 0
-                            ? Math.round(difference * 100) / -100
-                            : "+" + Math.round(difference * 100) / -100}
-                        </ViewLinesTile>
-                        <ViewLinesTile
-                          id="u"
-                          type="O/U"
-                          line={Math.round(total * 100) / 100}
-                        >
-                          U {Math.round(total * 100) / 100}
-                        </ViewLinesTile>
-                        <ViewLinesTile
-                          id="mo"
-                          type="Moneyline"
-                          line={
-                            difference < -20
-                              ? "+800"
-                              : difference < -10
-                              ? "+300"
-                              : difference < 0
-                              ? "+170"
-                              : difference < 10
-                              ? "-170"
-                              : difference < 20
-                              ? "-300"
-                              : "-800"
-                          }
-                        >
-                          {difference < -20
-                            ? "+800"
-                            : difference < -10
-                            ? "+300"
-                            : difference < 0
-                            ? "+170"
-                            : difference < 10
-                            ? "-170"
-                            : difference < 20
-                            ? "-300"
-                            : "-800"}
-                        </ViewLinesTile>
+                      <ViewLinesTile id="1a" type="O/U" line={155}>
+                      U {(Math.round((total-20)*100))/100} 
+                      <span style={{ color: "green" }}> +155</span>
+                    </ViewLinesTile>
+                    <ViewLinesTile id="1b" type="O/U" line={105}>
+                    U {(Math.round(total * 100) / 100)} 
+                    <span style={{ color: "green" }}> +105</span>
+                  </ViewLinesTile>
+                  <ViewLinesTile id="1c" type="O/U" line={-165}>
+                    U {(Math.round(total * 100) / 100)+20} 
+                    <span style={{ color: "green" }}> -165</span>
+                  </ViewLinesTile>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bet-slip-container">
-              <BetSlip />
-            </div>
-          </div>
-          <Lineups
+            <Lineups
             userTeam={userTeam}
             opponentTeam={opponentTeam}
             selectOpponentTotalProjected={selectOpponentTotalProjected}
             selectUserTotalProjected={selectUserTotalProjected}
           />
+            
+          </div>
+        
+        </div>
+        <div className="bet-slip-container">
+              <BetSlip />
+            </div>
         </div>
       </div>
     );
@@ -262,7 +164,7 @@ const mapStateToProps = (state) => ({
   selectOpponentTotalProjected: selectOpponentTotalProjected(state),
   difference:
     selectOpponentTotalProjected(state) - selectUserTotalProjected(state),
-  total: selectOpponentTotalProjected(state) + selectUserTotalProjected(state),
+  total: selectUserTotalProjected(state),
   betSlip: state.action.slip.map((ele) => ele.id),
 });
 const mapDispatchToProps = (dispatch) => ({

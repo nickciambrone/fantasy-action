@@ -1,12 +1,11 @@
 import React from 'react';
 import './view-lines-tile.styles.scss'
 import { connect } from "react-redux";
-import {addBet} from '../../redux/action/action.actions'
-import { deleteBet } from "../../redux/action/action.actions";
+import {addBet, deleteBet} from '../../redux/action/action.actions'
 
 const ViewLinesTile = (props) => {
     return(
-        <span
+        <div
         className={`${props.betSlip.includes(props.id)?'activated ' :''}click-lines-button`}
         
         style={{ marginBottom: "3px" }}
@@ -15,11 +14,11 @@ const ViewLinesTile = (props) => {
           props.betSlip.includes(props.id) ? 
           (e)=>props.deleteBet(props.id)
 :
-          (e)=>props.addBet({userId:'',id:e.target.id, amount:'', type: props.type, line: props.line, spread:props.spread})
+          (e)=>props.addBet({id:props.id, amount:'',  line: props.line})
         }
       >
         {props.children}
-      </span>
+      </div>
     )
 
 }

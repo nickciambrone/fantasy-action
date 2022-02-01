@@ -1,7 +1,27 @@
     @media screen and (max-width: 895px) {
         .change-format-button-link{
-            margin-top:4px
         }
     }
     @media screen and (min-width: 895px) {
+    }
+
+    .change-format-button-link{
+        opacity:.8;
+        &:hover{
+            opacity:1;
+            cursor: pointer;
+        }
+        
+-webkit-font-smoothing: antialiased;
+line-height: var(--bs-body-line-height);
+-webkit-tap-highlight-color: transparent;
+text-align: center;
+box-sizing: border-box;
+cursor: pointer;
+color: white;
+font-family: arial;
+font-size: 15px;
+font-weight: bolder;
+background-color: transparent;
+border: none;
     }

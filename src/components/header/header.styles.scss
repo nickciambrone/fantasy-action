@@ -1,16 +1,15 @@
 .header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+  
     height: 63px;
     display: flex;
     align-items: center;
     margin-right: 5%;
-    margin-bottom:12px;
     z-index: 1000;
 
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;        
-    background: #fff;
+    background: #242424;
     padding: .4rem;
     .right-side{
       justify-content: flex-end;
@@ -31,11 +30,19 @@
         cursor:pointer;
         text-decoration: none;
         font-size: small;
-        color:black;
         opacity: 1;
         font-weight: 500;
         font-size:14px;
+        width:10%
       
+
+      }
+      .option-home{
+        margin-left:2%;
+        width:30%;
+        cursor:pointer;
+        text-decoration: none;
+        font-size: small;
 
       }
     }

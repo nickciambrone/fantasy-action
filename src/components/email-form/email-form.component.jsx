@@ -7,7 +7,7 @@ import {
 import { updateBetHistory } from "../../redux/user/user.action.js";
 import { createBetslipCollection } from "../../firebase/firebase.utils.js";
 import { withRouter, Link } from "react-router-dom";
-import Check from "./success-green-check-mark.svg";
+// import Check from "./success-green-check-mark.svg";
 import SignUpWithGoogle from "../../components/sign-up-with-google/sign-up-with-google.component";
 import SignUpWithFacebook from "../../components/sign-up-with-facebook/sign-up-with-facebook.component";
 import { clearBets } from "../../redux/action/action.actions.js";
@@ -141,7 +141,7 @@ class EmailForm extends React.Component {
           </div>
         )}
         {this.state.betSubmitted ? (
-          <img src={Check} height="40px" alt="success" />
+          ':)'
         ) : (
           ""
         )}
