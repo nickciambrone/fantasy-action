@@ -48,6 +48,10 @@ console.log(this.props.betHistory)
       .replace('20:','8:')
       .replace('21:','9:')
       .replace('22:','10:')
+      .replace('23:','11:')
+      .replace('24:','12:')
+
+
 console.log(activeBet)
     let betTypes = Object.keys(activeBet.betSlip).map((ele) => activeBet.betSlip[ele]['type']);
     console.log(betTypes);

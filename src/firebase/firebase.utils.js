@@ -27,7 +27,6 @@ const config = {
 
       try{
         await userRef.set({
-          displayName,
           email,
           createdAt,
           ...additionalData
@@ -100,6 +99,7 @@ const config = {
   const googleProvider = new firebase.auth.GoogleAuthProvider();
 
   const facebookProvider = new firebase.auth.FacebookAuthProvider();
+
 
 
   googleProvider.setCustomParameters({prompt:'select_account'})

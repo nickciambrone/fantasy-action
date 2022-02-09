@@ -59,6 +59,10 @@ width:46.5%
   
 }
 @media screen and (min-width: 750px) {
+    #view-lines-main-area{
+        width:80%;
+        display:flex
+    }
     .line-card-holder-container{
         width:100%
     }
@@ -99,7 +103,7 @@ width:46.5%
         display:flex;
         padding-left:10px;
         padding-right:10px;
-        width:50%
+        width:60%
     }
     .left-view-lines{
         width:100%;
@@ -272,7 +276,6 @@ float:right;
 
 
 .view-lines-content{
-    padding-top: 10px;
     padding-bottom:30px
 }
 .edit-lineup-button-container{

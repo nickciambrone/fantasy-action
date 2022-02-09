@@ -1,5 +1,7 @@
 import React from 'react';
 import FormInput from '../form-input/form-input.component.jsx'
+import { auth } from '../../firebase/firebase.utils'
+
 import './sign-in.styles.scss';
 
 class SignIn extends React.Component{
@@ -13,12 +15,12 @@ class SignIn extends React.Component{
     }
     handleSubmit = async event=>{
         event.preventDefault();
-        // const {email, password} = this.state;
-        // try{
-        // await auth.signInWithEmailAndPassword(email, password)
-        // this.setState({'email':'',password:''})
+        const {email, password} = this.state;
+        try{
+        await auth.signInWithEmailAndPassword(email, password)
+        this.setState({'email':'',password:''})
 
-        // }catch(err){console.log('error signing in ', err.message)}
+        }catch(err){console.log('error signing in ', err.message)}
 
     }
 

@@ -6,14 +6,12 @@ class BetHistorySlip extends React.Component {
  
   componentDidMount = ()=>{
     window.scrollTo(0, 0);
-    console.log('fired')
 
   }
   render(){
     let {history, bet, match} = this.props;
     let betID = bet.createdAt['seconds']
-    console.log(betID);
-    console.log(match.path);
+    console.log(bet);
     const toDateTime = (secs) => {
       var t = new Date(1970, 0, 1); // Epoch
       t.setSeconds(secs);
@@ -28,12 +26,12 @@ class BetHistorySlip extends React.Component {
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div className="left-history-container">
           <div className="bet-history-email-container">
-            <span>User Email: </span>
-            <span style={{ marginBottom: "4px" }}>{bet["userEmail"]}</span>
+            <span>Risk: </span>
+            <span style={{ marginBottom: "4px" }}>${JSON.stringify(bet['betSlip'][0]['amount']).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</span>
           </div>
           <div className="bet-history-email-container">
-            <span>Opponent Email: </span>
-            <span style={{ marginBottom: "4px" }}>{bet["opponentEmail"]}</span>
+            <span>To Win: </span>
+            <span style={{ marginBottom: "4px" }}>${JSON.stringify(bet['betSlip'][0]['toWin']).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</span>
           </div>
         </div>
         <div style={{width:'20%', backgroundColor:'white'}}>

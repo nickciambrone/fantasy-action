@@ -42,6 +42,7 @@ class ViewLines extends React.Component {
         <Sidebar/>
        
       </div>
+      <div id='view-lines-main-area'style={{marginTop:'5px'}}>
         <div className="view-lines-content" style={{ display: "flex" }}>
           <div className="left-view-lines">
             <div className="left-top" style={{ marginBottom: "6px" }}>
@@ -150,6 +151,7 @@ class ViewLines extends React.Component {
         </div>
         <div className="bet-slip-container">
               <BetSlip />
+            </div>
             </div>
         </div>
       </div>

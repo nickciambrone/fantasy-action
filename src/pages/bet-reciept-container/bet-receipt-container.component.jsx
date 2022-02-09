@@ -49,6 +49,8 @@ class BetReceiptContainer extends React.Component {
     } else {
       alert("Bet not submitted, refresh the page and try again");
     }
+    window.location.reload(false);
+
   };
 
   render() {
@@ -162,8 +164,8 @@ class BetReceiptContainer extends React.Component {
                   <div style={{ display: "flex" }}>
                     <h4
                       style={{
-                        width: "25%",
-                        marginLeft: "37.5%",
+                        width: "50%",
+                        marginLeft: "25%",
                         padding: "8px 15px",
                         fontWeight: "bolder",
                       }}
