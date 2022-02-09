@@ -69,8 +69,8 @@ class BetReceiptContainer extends React.Component {
     return (
       <div className="bet-receipt-container">
         <Header />
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <div style={{ width: "17%" }}>
+        <div className = 'bet-receipt-content-main'>
+          <div  className='sidebar-container-brc'>
             <Sidebar />
           </div>
           {!currentUser ? <div class="sign-in-sign-up-new">

@@ -19,7 +19,11 @@
 }
 .bet-receipt-grid{padding-top:10px}
 
-@media screen and (max-width: 895px) {
+@media screen and (max-width: 700px) {
+    .bet-receipt-content-main{
+        display: flex;
+        flex-direction: column;
+    }
   
    
     .cfbb{
@@ -57,9 +61,16 @@
         flex-direction: row;
         justify-content: space-evenly;
     }
+    .sidebar-container-brc{
+        width:100%
+    }
   
 }
-@media screen and (min-width: 895px) {
+@media screen and (min-width: 700px) {
+    .bet-receipt-content-main{
+        display: flex;
+        flex-direction: row;
+    }
     .sign-in-sign-up-new{
         margin-top: 17px;
         display:flex;
@@ -106,6 +117,9 @@
         margin-left: 1%;
         margin-right: 2%;
 
+    }
+    .sidebar-container-brc{
+        width:17%
     }
 }
 

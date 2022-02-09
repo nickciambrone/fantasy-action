@@ -27,7 +27,7 @@ import {withRouter} from 'react-router-dom'
       ''
     )}
         {currentUser ? (
-          <div style={{color:'white'}} className="option" onClick={() =>{ auth.signOut(); history.push('/home')}}>
+          <div style={{color:'white'}} className="option" onClick={() =>{ auth.signOut(); }}>
             SIGN OUT
           </div>
         ) : (

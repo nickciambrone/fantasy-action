@@ -13,6 +13,8 @@ class SignUp extends React.Component {
       email: "",
       password: "",
       confirmPassword: "",
+      passwordMessage:false,
+      emailInUse:false
     };
   }
   handleSubmit = async event =>{
@@ -20,9 +22,10 @@ class SignUp extends React.Component {
     const { email, password, confirmPassword} = this.state;
     
     if (password!==confirmPassword){
-        alert("Passwords do not match");
+      this.setState({passwordMessage:'Passwords do not match', emailMessage:false})
         return;
     }
+   
 
     try{
         const {user} = await auth.createUserWithEmailAndPassword(email, password)
@@ -30,10 +33,36 @@ class SignUp extends React.Component {
         this.setState({
             email:'',
             password:'',
-            confirmPassword:''
+            confirmPassword:'',
+            passwordMessage:false,
+            emailMessage:false
+
         })
     }
     catch(error){
+      console.log(error.code)
+      if(error.code==='auth/email-already-in-use'){
+          this.setState({
+      
+            passwordMessage:false,
+            emailMessage:'E-mail Address is already in use'
+        })
+
+      }
+      if(error.code==='auth/invalid-email'){
+        this.setState({
+          passwordMessage:false,
+
+        emailMessage:'Invalid E-mail Address'
+        })
+      }
+      if(error.code==='auth/weak-password'){
+        this.setState({
+          passwordMessage:'Password must be atleast 6 characters',
+
+        emailMessage:false
+        })
+      }
 
     }
 
@@ -50,7 +79,8 @@ class SignUp extends React.Component {
         <h2 style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>I do not have a account</h2>
         <div style={{color:'black', fontFamily:'arial', textAlign:'left', fontWeight:500}}>Sign up with your email and password</div>
         <form onSubmit={this.handleSubmit}>
-       
+        {this.state.emailMessage ? <div className='alert-password-short' style={{textAlign:'left',color:'red', width:'100%'}}>{this.state.emailMessage}</div> : <span style={{height:'11.5px'}}>{" a"}</span>}
+
           <FormInput
             type="email"
             name="email"
@@ -59,6 +89,7 @@ class SignUp extends React.Component {
             label="Email"
             required
           />
+          {this.state.passwordMessage ? <div className='alert-password-short' style={{textAlign:'left',color:'red', width:'100%'}} >{this.state.passwordMessage}</div> : <span style={{height:'11.5px'}}>{" a"}</span>}
           <FormInput
             type="password"
             name="password"
@@ -67,6 +98,7 @@ class SignUp extends React.Component {
             label="Password"
             required
           />
+         {this.state.passwordMessage && this.state.passwordMessage!='Passwords do not match' ? <div className='alert-password-short' style={{textAlign:'left', width:'100%'}}> a</div> : <span style={{height:'11.5px'}}>{" a"}</span>}
           <FormInput
             type="password"
             name="confirmPassword"

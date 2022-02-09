@@ -3,6 +3,8 @@ import FormInput from '../form-input/form-input.component.jsx'
 import { auth } from '../../firebase/firebase.utils'
 
 import './sign-in.styles.scss';
+import SignUpWithFacebook from '../sign-up-with-facebook/sign-up-with-facebook.component.jsx';
+import SignUpWithGoogle from '../sign-up-with-google/sign-up-with-google.component.jsx';
 
 class SignIn extends React.Component{
 
@@ -10,7 +12,10 @@ class SignIn extends React.Component{
         super(props)
         this.state={
             email:'',
-            password:''
+            password:'',
+            emailMessage:false,
+            passwordMessage:false
+
         }
     }
     handleSubmit = async event=>{
@@ -20,7 +25,16 @@ class SignIn extends React.Component{
         await auth.signInWithEmailAndPassword(email, password)
         this.setState({'email':'',password:''})
 
-        }catch(err){console.log('error signing in ', err.message)}
+        }catch(err){
+            console.log('error signing in ', err.code)
+            if (err.code==='auth/user-not-found'){
+             this.setState({   emailMessage:'E-mail address not found', passwordMessage:false})
+            }
+            if(err.code==='auth/wrong-password'){
+                this.setState({   passwordMessage:'Password is incorrect', emailMessage:false})
+
+            }
+        }
 
     }
 
@@ -34,8 +48,9 @@ class SignIn extends React.Component{
         return (
             <div className='sign-in'>
                 <h2 style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>Sign in</h2>
-                <span style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>I already have an account</span>
-                <form onSubmit={this.handleSubmit}>
+                <div style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>I already have an account</div>
+                <form style={{marginBottom:'5px'}}onSubmit={this.handleSubmit}>
+                {this.state.emailMessage ? <div style={{color:'red', width:'100%', textAlign:'left'}}>{this.state.emailMessage}</div> : <div style={{}}>test</div>}
                     <FormInput 
                         name='email' 
                         type='email' 
@@ -43,6 +58,8 @@ class SignIn extends React.Component{
                         value={this.state.email}
                         handleChange={this.handleChange} 
                         required />
+                        {this.state.passwordMessage ? <div style={{color:'red', width:'100%', textAlign:'left'}}>{this.state.passwordMessage}</div> : <div style={{}}>test</div>}
+
                     <FormInput 
                         name='password' 
                         type='password' 
@@ -55,6 +72,15 @@ class SignIn extends React.Component{
 
             </div>
                 </form>
+                <div style={{display:'flex', flexDirection:'column'}}>
+                <div style={{width:'48%', marginBottom:'5px'}}>
+                <SignUpWithFacebook/>
+                </div>
+                <div style={{width:'48%'}}>
+                <SignUpWithGoogle/>
+                </div>
+
+                </div>
             </div>
         )
     }
