@@ -37,122 +37,119 @@ class ViewLines extends React.Component {
     return (
       <div className="view-lines">
         <Header />
-        <div className = 'view-lines-main'>
-        <div className = 'sidebar-container'>
-        <Sidebar/>
-       
-      </div>
-      <div id='view-lines-main-area'style={{marginTop:'5px'}}>
-        <div className="view-lines-content" style={{ display: "flex" }}>
-          <div className="left-view-lines">
-            <div className="left-top" style={{ marginBottom: "6px" }}>
-             
-             
-              <div className="line-card-holder-container">
-                <div
-                  className="line-card-holder"
-                  style={{
-                    textAlign: "left",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <div
-                    className="view-lines-card"
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      backgroundColor: "#121212",
-                      color: "white",
-                      width: "96%",
-                      marginLeft: "2%",
-                      height: "100px",
-                    }}
-                  >
+        <div className="view-lines-main">
+          <div className="sidebar-container">
+            <Sidebar />
+          </div>
+          <div id="view-lines-main-area" style={{ marginTop: "5px" }}>
+            <div className="view-lines-content" style={{ display: "flex" }}>
+              <div className="left-view-lines">
+                <div className="left-top" style={{ marginBottom: "6px" }}>
+                  <div className="line-card-holder-container">
                     <div
-                      className="header-view-lines"
-                      style={{ display: "flex", width: "100%" }}
+                      className="line-card-holder"
+                      style={{
+                        textAlign: "left",
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
                     >
-                      <div style={{ width: "35%" }}></div>
-                    </div>
-                    <div style={{ display: "flex" }}>
                       <div
-                        className="teams-view-lines"
+                        className="view-lines-card"
                         style={{
                           display: "flex",
                           flexDirection: "column",
-                          width: "15%",
-                          textAlign:'center'
+                          backgroundColor: "#121212",
+                          color: "white",
+                          width: "96%",
+                          marginLeft: "2%",
+                          height: "100px",
                         }}
                       >
-                        <span
-                          style={{
-                            padding: "7px",
-                            height: "30px",
-                            marginBottom: "3px",
-                          }}
+                        <div
+                          className="header-view-lines"
+                          style={{ display: "flex", width: "100%" }}
                         >
-                          Over{" "}
-                        </span>
-                        <span style={{ padding: "7px", height: "30px" }}>
-                          Under{" "}
-                        </span>
-                      </div>
-                      <div
-                        className="lines-view-lines"
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          flexWrap: "wrap",
-                          width: "85%",
-                        }}
-                      >
-                        <ViewLinesTile id="0a" type="O/U" line={-175}>
-                          O {(Math.round((total-20)*100))/100} <span style={{ color: "green" }}>-175</span>
+                          <div style={{ width: "35%" }}></div>
+                        </div>
+                        <div style={{ display: "flex" }}>
+                          <div
+                            className="teams-view-lines"
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              width: "15%",
+                              textAlign: "center",
+                            }}
+                          >
+                            <span
+                              style={{
+                                padding: "7px",
+                                height: "30px",
+                                marginBottom: "3px",
+                              }}
+                            >
+                              Over{" "}
+                            </span>
+                            <span style={{ padding: "7px", height: "30px" }}>
+                              Under{" "}
+                            </span>
+                          </div>
+                          <div
+                            className="lines-view-lines"
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              flexWrap: "wrap",
+                              width: "85%",
+                            }}
+                          >
+                            <ViewLinesTile id="0a" type="O/U" line={-175}>
+                              O {Math.round((total - 20) * 100) / 100}{" "}
+                              <span style={{ color: "green" }}>-175</span>
+                            </ViewLinesTile>
+                            <ViewLinesTile id="0b" type="O/U" line={-125}>
+                              O {Math.round(total * 100) / 100}
+                              <span style={{ color: "green" }}> -125</span>
+                            </ViewLinesTile>
 
-                        </ViewLinesTile>
-                        <ViewLinesTile id="0b" type="O/U" line={-125}>
-                          O {Math.round(total * 100) / 100} 
-                          <span style={{ color: "green" }}> -125</span>
-                        </ViewLinesTile>
+                            <ViewLinesTile id="0c" type="O/U" line={155}>
+                              O {Math.round(total * 100) / 100 + 20}
+                              <span style={{ color: "green" }}> +155</span>
+                            </ViewLinesTile>
 
-                        <ViewLinesTile id="0c" type="O/U" line={155}>
-                        O {(Math.round(total * 100) / 100)+20} 
-                        <span style={{ color: "green" }}> +155</span>
-                      </ViewLinesTile>
-
-                      <ViewLinesTile id="1a" type="O/U" line={155}>
-                      U {(Math.round((total-20)*100))/100} 
-                      <span style={{ color: "green" }}> +155</span>
-                    </ViewLinesTile>
-                    <ViewLinesTile id="1b" type="O/U" line={105}>
-                    U {(Math.round(total * 100) / 100)} 
-                    <span style={{ color: "green" }}> +105</span>
-                  </ViewLinesTile>
-                  <ViewLinesTile id="1c" type="O/U" line={-165}>
-                    U {(Math.round(total * 100) / 100)+20} 
-                    <span style={{ color: "green" }}> -165</span>
-                  </ViewLinesTile>
+                            <ViewLinesTile id="1a" type="O/U" line={155}>
+                              U {Math.round((total - 20) * 100) / 100}
+                              <span style={{ color: "green" }}> +155</span>
+                            </ViewLinesTile>
+                            <ViewLinesTile id="1b" type="O/U" line={105}>
+                              U {Math.round(total * 100) / 100}
+                              <span style={{ color: "green" }}> +105</span>
+                            </ViewLinesTile>
+                            <ViewLinesTile id="1c" type="O/U" line={-165}>
+                              U {Math.round(total * 100) / 100 + 20}
+                              <span style={{ color: "green" }}> -165</span>
+                            </ViewLinesTile>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="bet-slip-container">
+                  <BetSlip />
+                </div>
               </div>
             </div>
-            <Lineups
-            userTeam={userTeam}
-            opponentTeam={opponentTeam}
-            selectOpponentTotalProjected={selectOpponentTotalProjected}
-            selectUserTotalProjected={selectUserTotalProjected}
-          />
-            
+            <div className='view-lines-lineups-container'>
+              <Lineups
+                userTeam={userTeam}
+                opponentTeam={opponentTeam}
+                selectOpponentTotalProjected={selectOpponentTotalProjected}
+                selectUserTotalProjected={selectUserTotalProjected}
+              />
+            </div>
           </div>
-        
-        </div>
-        <div className="bet-slip-container">
-              <BetSlip />
-            </div>
-            </div>
         </div>
       </div>
     );

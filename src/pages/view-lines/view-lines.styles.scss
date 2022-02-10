@@ -46,7 +46,8 @@ width:46.5%
         width:100%
     }
     .bet-slip-container{
-        width:50%
+        width:90%;
+        margin-left:5%
     }
     .lineups{
         display: flex;
@@ -56,6 +57,9 @@ width:46.5%
   
 }
 @media screen and (min-width: 700px) {
+    .view-lines-lineups-container{
+        width:40%
+    }
     #view-lines-main-area{
         width:80%;
         display:flex
@@ -107,7 +111,8 @@ width:46.5%
         margin-left:2%;
     }
     .bet-slip-container{
-        width:30%
+        width:90%;
+        margin-left:5%;
     }
     .lineups{
         display: flex;
