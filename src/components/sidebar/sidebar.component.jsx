@@ -160,7 +160,7 @@ const Sidebar = ({ teamsFull, changePosition, history, formatSelected, checkAllB
         )}
       </div>
       <div
-        className="place-bets-sb"
+        className="place-bets-sb bbwb"
         style={{
           color: "white",
           fontWeight: "bolder",

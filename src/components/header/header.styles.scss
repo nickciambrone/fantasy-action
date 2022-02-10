@@ -24,16 +24,14 @@
    
 
       
-  
+
       .option {
-        padding: 10px 15px;
         cursor:pointer;
         text-decoration: none;
         font-size: small;
         opacity: 1;
         font-weight: 500;
         font-size:14px;
-        width:10%
       
 
       }
@@ -47,12 +45,24 @@
     }
   @media screen and (max-width:700px){
     .option-home{
-      width:70%
+      width:50%
     }
+    .option{
+      width:25%
+    }
+
   }
   @media screen and (min-width:700px){
+    .header-space-filler{
+      width:48%
+    }
     .option-home{
-      width:30%
+      width:30%;
+      margin-left:48%
+
+    }
+    .option{
+      width:10%
     }
   }
 

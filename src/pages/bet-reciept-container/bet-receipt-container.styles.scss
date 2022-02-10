@@ -20,6 +20,12 @@
 .bet-receipt-grid{padding-top:10px}
 
 @media screen and (max-width: 700px) {
+    .sign-in{
+        padding:20px 10px
+    }
+    .sign-up{
+        padding:20px 10px
+    }
     .bet-receipt-content-main{
         display: flex;
         flex-direction: column;
@@ -62,7 +68,12 @@
         justify-content: space-evenly;
     }
     .sidebar-container-brc{
+       
         width:100%
+    }
+    .sidebar{
+        display:flex;
+        flex-direction: row;
     }
   
 }

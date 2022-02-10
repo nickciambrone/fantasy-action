@@ -1,13 +1,17 @@
 @media screen and (max-width:480px){
 
 }
-@media screen and (min-width:480px){
+@media screen and (min-width:700px){
     .bet-history-slip-container{display:flex; flex-direction: row;}
-.bhs-sidebar-container{
-    width:17%
-}
+
 .past-wagers-container{
     width:60%;
     margin-left: 2%;
+}
+}
+@media screen and (min-width:700px){
+
+.bhs-sidebar-container{
+    width:17%
 }
 }

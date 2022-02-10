@@ -46,7 +46,7 @@ class SignIn extends React.Component{
 
     render(){
         return (
-            <div className='sign-in'>
+            <div className='sign-in' >
                 <h2 style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>Sign in</h2>
                 <div style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>I already have an account</div>
                 <form style={{marginBottom:'5px'}}onSubmit={this.handleSubmit}>

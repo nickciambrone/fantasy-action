@@ -1,8 +1,6 @@
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 700px) {
     
-    .sidebar{
-        display:flex
-    }
+ 
     .view-lines-user-team{
     }
     .first-dark{
@@ -12,7 +10,6 @@
 width:46.5%
     }
     .edit-lineup-button-container{
-        width:46.5%
     }
 .first-psv{
     width:60%
@@ -58,7 +55,7 @@ width:46.5%
     }
   
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 700px) {
     #view-lines-main-area{
         width:80%;
         display:flex

@@ -18,9 +18,9 @@ import {withRouter} from 'react-router-dom'
         <span style={{color:'white', marginLeft:'3px', verticalAlign:'middle', lineHeight:'90px'}}>Fantasy<b> Live Bets</b>  </span>
         </div>
       </Link>
-     
+     <div className='header-space-filler'></div>
     {currentUser ? (
-      <Link style={{color:'white', fontWeight:'bolder', marginLeft:'48%'}} className="option" to="/home">
+      <Link style={{color:'white', fontWeight:'bolder'}} className="option" to="/home">
       Bet History
     </Link>
     ) : (
