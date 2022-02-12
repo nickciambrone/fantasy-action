@@ -8,6 +8,7 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
+    height:42px
   }
   .enabled{
     .glyphicon-plus{
@@ -20,7 +21,8 @@
         color: red;
         cursor: pointer;
 
-  
+        height:42px
+
       }
     }
   }
