@@ -47,10 +47,10 @@ class SignIn extends React.Component{
     render(){
         return (
             <div className='sign-in' >
-                <h2 style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>Sign in</h2>
-                <div style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>I already have an account</div>
+                <h2 style={{color:'white', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>Sign in</h2>
+                <div style={{color:'white', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>I already have an account</div>
                 <form style={{marginBottom:'5px'}}onSubmit={this.handleSubmit}>
-                {this.state.emailMessage ? <div style={{color:'red', width:'100%', textAlign:'left'}}>{this.state.emailMessage}</div> : <div style={{}}>test</div>}
+                {this.state.emailMessage ? <div style={{color:'red', width:'100%', textAlign:'left'}}>{this.state.emailMessage}</div> : <div style={{color:'black'}}>test</div>}
                     <FormInput 
                         name='email' 
                         type='email' 
@@ -58,7 +58,7 @@ class SignIn extends React.Component{
                         value={this.state.email}
                         handleChange={this.handleChange} 
                         required />
-                        {this.state.passwordMessage ? <div style={{color:'red', width:'100%', textAlign:'left'}}>{this.state.passwordMessage}</div> : <div style={{}}>test</div>}
+                        {this.state.passwordMessage ? <div style={{color:'red', width:'100%', textAlign:'left'}}>{this.state.passwordMessage}</div> : <div style={{color:'black'}}>test</div>}
 
                     <FormInput 
                         name='password' 

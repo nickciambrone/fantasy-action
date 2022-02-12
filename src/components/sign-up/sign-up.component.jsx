@@ -76,8 +76,8 @@ class SignUp extends React.Component {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className="sign-up">
-        <h2 style={{color:'black', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>I do not have a account</h2>
-        <div style={{color:'black', fontFamily:'arial', textAlign:'left', fontWeight:500}}>Sign up with your email and password</div>
+        <h2 style={{color:'white', fontWeight:'bolder', fontFamily:'arial', textAlign:'left'}}>I do not have a account</h2>
+        <div style={{color:'white', fontFamily:'arial', textAlign:'left', fontWeight:500}}>Sign up with your email and password</div>
         <form onSubmit={this.handleSubmit}>
         {this.state.emailMessage ? <div className='alert-password-short' style={{textAlign:'left',color:'red', width:'100%'}}>{this.state.emailMessage}</div> : <span style={{height:'11.5px'}}>{" a"}</span>}
 
