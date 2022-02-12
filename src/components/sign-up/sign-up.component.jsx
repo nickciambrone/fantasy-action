@@ -98,7 +98,7 @@ class SignUp extends React.Component {
             label="Password"
             required
           />
-         {this.state.passwordMessage && this.state.passwordMessage!='Passwords do not match' ? <div className='alert-password-short' style={{textAlign:'left', width:'100%'}}> a</div> : <span style={{height:'11.5px'}}>{" a"}</span>}
+         {this.state.passwordMessage && this.state.passwordMessage!='Passwords do not match' ? <div className='alert-password-short' style={{textAlign:'left', width:'100%'}}> a</div> : <span style={{height:'11.5px', color:'black'}}>{" a"}</span>}
           <FormInput
             type="password"
             name="confirmPassword"
