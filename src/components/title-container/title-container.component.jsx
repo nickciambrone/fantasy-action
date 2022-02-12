@@ -6,7 +6,7 @@ const TitleContainer = ({ history }) => {
   return (
     <div className="title-container" style={{display:'flex',  justifyContent:'center'}}>
     <div className = 'title-container-main' style={{display:'flex',  alignContent:'center'}}>
-    <div style={{paddingTop:'12px'}}>  <img
+    <div style={{paddingTop:'10px'}}>  <img
     height="40px"
     alt="crown logo"
     src={crown}
