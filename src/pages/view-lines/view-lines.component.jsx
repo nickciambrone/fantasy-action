@@ -104,29 +104,29 @@ class ViewLines extends React.Component {
                               width: "85%",
                             }}
                           >
-                            <ViewLinesTile id="0a" type="O/U" line={-175}>
+                            <ViewLinesTile id="0a" type="O/U" line={-175} overUnder={Math.round((total - 20) * 100) / 100}>
                               O {Math.round((total - 20) * 100) / 100}{" "}
                               <span style={{ color: "green" }}>-175</span>
                             </ViewLinesTile>
-                            <ViewLinesTile id="0b" type="O/U" line={-125}>
+                            <ViewLinesTile id="0b" type="O/U" line={-125} overUnder={Math.round(total * 100) / 100}>
                               O {Math.round(total * 100) / 100}
                               <span style={{ color: "green" }}> -125</span>
                             </ViewLinesTile>
 
-                            <ViewLinesTile id="0c" type="O/U" line={155}>
+                            <ViewLinesTile id="0c" type="O/U" line={155} overUnder={Math.round(total * 100) / 100 + 20}>
                               O {Math.round(total * 100) / 100 + 20}
                               <span style={{ color: "green" }}> +155</span>
                             </ViewLinesTile>
 
-                            <ViewLinesTile id="1a" type="O/U" line={155}>
+                            <ViewLinesTile id="1a" type="O/U" line={155} overUnder = {Math.round((total - 20) * 100) / 100}>
                               U {Math.round((total - 20) * 100) / 100}
                               <span style={{ color: "green" }}> +155</span>
                             </ViewLinesTile>
-                            <ViewLinesTile id="1b" type="O/U" line={105}>
+                            <ViewLinesTile id="1b" type="O/U" line={105} overUnder={Math.round(total * 100) / 100}>
                               U {Math.round(total * 100) / 100}
                               <span style={{ color: "green" }}> +105</span>
                             </ViewLinesTile>
-                            <ViewLinesTile id="1c" type="O/U" line={-165}>
+                            <ViewLinesTile id="1c" type="O/U" line={-165} overUnder={Math.round(total * 100) / 100 + 20}>
                               U {Math.round(total * 100) / 100 + 20}
                               <span style={{ color: "green" }}> -165</span>
                             </ViewLinesTile>

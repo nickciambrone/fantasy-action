@@ -25,7 +25,7 @@ class BetHistorySlipContainer extends React.Component {
     if (tempBetHistory) {
     if (tempBetHistory.length > 0) {
       for (const bet in tempBetHistory) {
-        console.log(tempBetHistory[bet]);
+        // console.log(tempBetHistory[bet]);
         if (Object.keys(tempBetHistory[bet]).length>0) {
           times.push(tempBetHistory[bet]["createdAt"]["seconds"]);
         }
@@ -42,6 +42,7 @@ class BetHistorySlipContainer extends React.Component {
       }
     }
   }
+  console.log(tempBetSlip)
     return (
       <div className="bet-history-slip-container">
       <div className= 'bhs-sidebar-container'>

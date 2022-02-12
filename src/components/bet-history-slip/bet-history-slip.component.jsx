@@ -11,12 +11,13 @@ class BetHistorySlip extends React.Component {
   render(){
     let {history, bet, match} = this.props;
     let betID = bet.createdAt['seconds']
-    console.log(bet);
+    // console.log(bet);
     const toDateTime = (secs) => {
       var t = new Date(1970, 0, 1); // Epoch
       t.setSeconds(secs);
       return t;
     };
+    console.log(bet['betSlip'])
   return (
     
     <div
@@ -24,17 +25,24 @@ class BetHistorySlip extends React.Component {
       style={{ height: "175px", fontSize: "13px" }}
     >
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <div className="left-history-container">
-          <div className="bet-history-email-container">
-            <span>Risk: </span>
-            <span style={{ marginBottom: "4px" }}>${JSON.stringify(bet['betSlip'][0]['amount']).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</span>
-          </div>
-          <div className="bet-history-email-container">
-            <span>To Win: </span>
-            <span style={{ marginBottom: "4px" }}>${JSON.stringify(bet['betSlip'][0]['toWin']).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</span>
-          </div>
+      {Object.keys(bet['betSlip']).map(ele=>
+        <div className="history-container-segment">
+        <div style={{display:'flex'}}>
+        <div style={{paddingLeft:'5px'}}>{bet['betSlip'][ele]['id'].includes('0') ? 'Over' :'Under' }-</div>
+        <div style={{paddingLeft:'5px'}}>{bet['betSlip'][ele]['overUnder'] }</div>
+</div>
+        <div className="bet-history-email-container">
+          <span>Risk: </span>
+          <span style={{ marginBottom: "4px" }}>${JSON.stringify(bet['betSlip'][ele]['amount']).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</span>
         </div>
-        <div style={{width:'20%', backgroundColor:'white'}}>
+        <div className="bet-history-email-container">
+          <span>To Win: </span>
+          <span style={{ marginBottom: "4px" }}>${JSON.stringify(bet['betSlip'][ele]['toWin']).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</span>
+        </div>
+      </div>
+        )}
+       
+        <div style={{width:'10%', backgroundColor:'white', marginLeft:'auto'}}>
       <svg onClick ={()=>history.push(`${match.path}/${betID}`)}  style={{marginTop:'25px'}} role="img" aria-labelledby="title" class="sportsbook__icon--tool-tip-outlined" width="30" height="30" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Tooltip icon representing more supplementary information is present</title><rect class="sportsbook__icon--tool-tip-outlined" x="0.5" y="0.5" width="15" height="15" rx="7.5" stroke="black"></rect><path class="sportsbook__icon--tool-tip-outlined i" d="M7.13086 12H8.85938V6.56543H7.13086V12ZM7.99512 5.83789C8.49805 5.83789 8.91309 5.44238 8.91309 4.93945C8.91309 4.43652 8.49805 4.03613 7.99512 4.03613C7.49219 4.03613 7.07715 4.43652 7.07715 4.93945C7.07715 5.44238 7.49219 5.83789 7.99512 5.83789Z" fill="black"></path></svg>      </div>
       </div>
       <div style={{ width: "20%", backgroundColor: "white" }}></div>

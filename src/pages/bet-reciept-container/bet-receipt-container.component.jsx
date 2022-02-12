@@ -64,7 +64,7 @@ class BetReceiptContainer extends React.Component {
       updateBetHistory,
     } = this.props;
     let bets = betSlip.map((ele) => ele["type"]);
-    console.log(this.state.type);
+    console.log(betSlip);
 
     return (
       <div className="bet-receipt-container">

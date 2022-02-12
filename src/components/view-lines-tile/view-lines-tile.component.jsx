@@ -14,7 +14,7 @@ const ViewLinesTile = (props) => {
           props.betSlip.includes(props.id) ? 
           (e)=>props.deleteBet(props.id)
 :
-          (e)=>props.addBet({id:props.id, amount:'',  line: props.line})
+          (e)=>props.addBet({id:props.id, amount:'',  line: props.line, overUnder:props.overUnder})
         }
       >
         {props.children}
