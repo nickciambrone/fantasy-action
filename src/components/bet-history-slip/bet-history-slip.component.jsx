@@ -1,83 +1,106 @@
-import React  from "react";
+import React from "react";
 import "./bet-history-slip.styles.scss";
-import {withRouter} from 'react-router-dom';
-
+import { withRouter } from "react-router-dom";
+import Dropdown from './dropdownArrow.png';
 class BetHistorySlip extends React.Component {
- 
-  componentDidMount = ()=>{
+  componentDidMount = () => {
     window.scrollTo(0, 0);
-
-  }
-  render(){
-    let {history, bet, match} = this.props;
-    let betID = bet.createdAt['seconds']
+  };
+  render() {
+    let { history, bet, match } = this.props;
+    let betID = bet.createdAt["seconds"];
     // console.log(bet);
     const toDateTime = (secs) => {
       var t = new Date(1970, 0, 1); // Epoch
       t.setSeconds(secs);
       return t;
     };
-    console.log(bet['betSlip'])
-  return (
-    
-    <div
-      className="bet-history-slip"
-      style={{ height: "175px", fontSize: "13px" }}
-    >
-      <div style={{ display: "flex", flexDirection: "row" }}>
-      {Object.keys(bet['betSlip']).map(ele=>
-        <div className="history-container-segment">
-        <div style={{display:'flex'}}>
-        <div style={{paddingLeft:'5px'}}>{bet['betSlip'][ele]['id'].includes('0') ? 'Over' :'Under' }-</div>
-        <div style={{paddingLeft:'5px'}}>{bet['betSlip'][ele]['overUnder'] }</div>
-</div>
-        <div className="bet-history-email-container">
-          <span>Risk: </span>
-          <span style={{ marginBottom: "4px" }}>${JSON.stringify(bet['betSlip'][ele]['amount']).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</span>
-        </div>
-        <div className="bet-history-email-container">
-          <span>To Win: </span>
-          <span style={{ marginBottom: "4px" }}>${JSON.stringify(bet['betSlip'][ele]['toWin']).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</span>
-        </div>
-      </div>
-        )}
-       
-        <div style={{width:'10%', backgroundColor:'white', marginLeft:'auto'}}>
-      <svg onClick ={()=>history.push(`${match.path}/${betID}`)}  style={{marginTop:'25px'}} role="img" aria-labelledby="title" class="sportsbook__icon--tool-tip-outlined" width="30" height="30" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Tooltip icon representing more supplementary information is present</title><rect class="sportsbook__icon--tool-tip-outlined" x="0.5" y="0.5" width="15" height="15" rx="7.5" stroke="black"></rect><path class="sportsbook__icon--tool-tip-outlined i" d="M7.13086 12H8.85938V6.56543H7.13086V12ZM7.99512 5.83789C8.49805 5.83789 8.91309 5.44238 8.91309 4.93945C8.91309 4.43652 8.49805 4.03613 7.99512 4.03613C7.49219 4.03613 7.07715 4.43652 7.07715 4.93945C7.07715 5.44238 7.49219 5.83789 7.99512 5.83789Z" fill="black"></path></svg>      </div>
-      </div>
-      <div style={{ width: "20%", backgroundColor: "white" }}></div>
+    console.log(bet["betSlip"]);
+    return (
       <div
-        className="bet-history-email-container"
-        style={{ borderTop: "1px lightgrey solid" }}
+        className="bet-history-slip"
+        style={{ fontSize: "13px" }}
       >
-        <span>Bet placed at:</span>{" "}
-        <span>
-          {JSON.stringify(
-            toDateTime(
-              bet["createdAt"]["seconds"] +
-                bet["createdAt"]["nanoseconds"] / 1000000000 +
-                7200
-            )
-          )
-            .substring(1, 17)
-            .replace("T", " ")
-            .replace("00:", "12:")
-            .replace('13:','1:')
-            .replace('14:','2:')
-            .replace('15:','3:')
-            .replace('16:','4:')
-            .replace('17:','5:')
-            .replace('18:','6:')
-            .replace('19:','7:')
-            .replace('20:','8:')
-            .replace('21:','9:')
-            .replace('22:','10:')
-          }
-        </span>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+        <div
+        style={{
+          width: "10%",
+          paddingTop:'26px'
+        }}
+      >
+      <img height='27px' src={Dropdown}/>
       </div>
-    </div>
-  );
-};
+        <div style={{ display: "flex", flexDirection: "row", justifyContent:'space-evenly', width:'90%' }}>
+      
+        {Object.keys(bet["betSlip"]).map((ele) => (
+            <div className="history-container-segment">
+              <div style={{ display: "flex" }}>
+                <div style={{ paddingLeft: "5px" }}>
+                  <b>{bet["betSlip"][ele]["id"].includes("0") ? "Over" : "Under"}-</b>
+                </div>
+                <div style={{ paddingLeft: "5px" }}>
+                  {bet["betSlip"][ele]["overUnder"]}
+                </div>
+              </div>
+              <div className="bet-history-email-container">
+                <span>Risk: </span>
+                <span style={{ marginBottom: "4px" }}>
+                  $
+                  {JSON.stringify(bet["betSlip"][ele]["amount"]).replace(
+                    /(\d)(?=(\d\d\d)+(?!\d))/g,
+                    "$1,"
+                  )}
+                </span>
+              </div>
+              <div className="bet-history-email-container" >
+                <span>To Win: </span>
+                <span style={{ marginBottom: "4px" }}>
+                  $
+                  {JSON.stringify(bet["betSlip"][ele]["toWin"]).replace(
+                    /(\d)(?=(\d\d\d)+(?!\d))/g,
+                    "$1,"
+                  )}
+                </span>
+              </div>
+              
+            </div>
+          ))}
+          </div>  
+
+          </div>
+        
+        <div style={{ width: "20%", backgroundColor: "white" }}></div>
+        <div
+          className="bet-history-email-container"
+          style={{ borderTop: "1px lightgrey solid" , color:'white'}}
+        >
+          <span>Bet placed at:</span>{" "}
+          <span>
+            {JSON.stringify(
+              toDateTime(
+                bet["createdAt"]["seconds"] +
+                  bet["createdAt"]["nanoseconds"] / 1000000000 +
+                  7200
+              )
+            )
+              .substring(1, 17)
+              .replace("T", " ")
+              .replace("00:", "12:")
+              .replace("13:", "1:")
+              .replace("14:", "2:")
+              .replace("15:", "3:")
+              .replace("16:", "4:")
+              .replace("17:", "5:")
+              .replace("18:", "6:")
+              .replace("19:", "7:")
+              .replace("20:", "8:")
+              .replace("21:", "9:")
+              .replace("22:", "10:")}
+          </span>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default withRouter(BetHistorySlip);

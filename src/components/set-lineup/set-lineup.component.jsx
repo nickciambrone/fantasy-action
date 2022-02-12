@@ -69,11 +69,13 @@ class SetLineup extends React.Component {
     }
 
     return (
-      <div className="set-lineup">
+      <div className="set-lineup" style={{backgroundColor:'black'}}>
         <div className="sidebar-container-sl">
           <Sidebar />
         </div>
         <div className="main-set-lineup">
+        <div style={{display:'flex'}}>
+        <span style={{color:'white', textAlign:'left', paddingTop:'10px', fontSize:'16px', fontWeight:600}}>Select a lineup</span>
           {teamsFull === "true" ? (
             <div className = 'select-wagers-next-button'
               style={{
@@ -84,6 +86,7 @@ class SetLineup extends React.Component {
                 color: "#091606",
                 cursor: "pointer",
                 fontSize: "13px",
+                marginLeft:'auto'
               }}
               onClick={() => history.push("/view-lines")}
             >
@@ -93,6 +96,7 @@ class SetLineup extends React.Component {
           ) : (
             ""
           )}
+          </div>
           <div className = 'player-area'>
             <div className="player-options-container">
               <input

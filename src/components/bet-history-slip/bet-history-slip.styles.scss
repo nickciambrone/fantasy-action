@@ -1,5 +1,5 @@
 .bet-history-slip{
-    background-color: white;
+    background-color: #121212;
     border-radius: 3px;
     padding: 2px 5px;
     color:black;
@@ -17,8 +17,8 @@ margin-top:1px;
 }
 
 .history-container-segment{
-    width:25%;
-    border-right:1px solid lightgrey;
+    padding:8px;
+    color:white;
 }
 .edit-button{
     &:hover{
@@ -39,9 +39,7 @@ svg{
 .bet-history-email-container{
     display: flex;
     flex-direction: column;
-    background-color: white;
     padding:6px;
-    height:55px;
     width:100%
 
 }
@@ -49,9 +47,6 @@ svg{
 }
 @media screen and (min-width: 895px) {
     .bet-history-email-container{
-        background-color: white;
-        height:55px;    
-        padding:12px 6px;
 
 
     }

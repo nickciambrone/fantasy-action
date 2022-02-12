@@ -2,7 +2,9 @@
 
 }
 @media screen and (min-width:700px){
-    .bet-history-slip-container{display:flex; flex-direction: row;}
+    .bet-history-slip-container{
+        display:flex; flex-direction: row; 
+    }
 
 .past-wagers-container{
     width:60%;
@@ -14,4 +16,11 @@
 .bhs-sidebar-container{
     width:17%
 }
+}
+.bet-history-slip-container{
+    background-color: black;
+    padding-bottom: 100px;
+}
+.past-wagers-container{
+    padding:0 10px;
 }

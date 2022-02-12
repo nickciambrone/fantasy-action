@@ -5,6 +5,7 @@ import PlusButton from "./plus-svgrepo-com.svg";
 import { connect } from "react-redux";
 import betSlipComponent from "../bet-slip/bet-slip.component";
 import Sidebar from "../sidebar/sidebar.component";
+import BetHistoryRouter from '../bet-history-router/bet-history-router.component';
 import './bet-history-slip-container.styles.scss'
 class BetHistorySlipContainer extends React.Component {
   constructor(props) {
@@ -48,9 +49,12 @@ class BetHistorySlipContainer extends React.Component {
       <div className= 'bhs-sidebar-container'>
       <Sidebar/>
       </div>
-      <div className = 'past-wagers-container'>
-        <h3 style={{ marginTop: "5px" }}>Your past wagers:</h3>
+      <div className = 'past-wagers-container' >
+      <h3 style={{ marginTop: "5px", color:'white', textAlign:'left', margin:'20px 0' }}>My past wagers:</h3>
 
+      <div style={{marginBottom:'20px'}}>
+      <BetHistoryRouter links={['All', 'Unsettled', 'Won', 'Lost'] }/>
+      </div>
         {tempBetSlip.length === 0 ? (
           <span
             style={{
