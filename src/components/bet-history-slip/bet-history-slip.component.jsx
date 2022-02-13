@@ -38,7 +38,7 @@ class BetHistorySlip extends React.Component {
                   <b>{bet["betSlip"][ele]["id"].includes("0") ? "Over" : "Under"}-</b>
                 </div>
                 <div style={{ paddingLeft: "5px" }}>
-                  {bet["betSlip"][ele]["overUnder"]}
+                  {Math.round(bet["betSlip"][ele]["overUnder"]*100)/100}
                 </div>
               </div>
               <div className="bet-history-email-container" >
