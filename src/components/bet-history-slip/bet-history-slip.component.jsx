@@ -30,10 +30,10 @@ class BetHistorySlip extends React.Component {
       >
       <img height='27px' src={Dropdown}/>
       </div>
-        <div style={{ display: "flex", flexDirection: "row", justifyContent:'space-evenly', width:'90%' }}>
+        <div style={{ display: "flex", flexDirection: "row", width:'90%' }}>
       
         {Object.keys(bet["betSlip"]).map((ele) => (
-            <div className="history-container-segment">
+            <div className="history-container-segment" style={{marginRight:'20px', borderRight:'1px solid lightgrey', padding:'0px 20px'}}>
               <div style={{ display: "flex" }}>
                 <div style={{ paddingLeft: "5px" }}>
                   <b>{bet["betSlip"][ele]["id"].includes("0") ? "Over" : "Under"}-</b>
@@ -42,7 +42,7 @@ class BetHistorySlip extends React.Component {
                   {bet["betSlip"][ele]["overUnder"]}
                 </div>
               </div>
-              <div className="bet-history-email-container">
+              <div className="bet-history-email-container" >
                 <span>Risk: </span>
                 <span style={{ marginBottom: "4px" }}>
                   $
@@ -72,7 +72,7 @@ class BetHistorySlip extends React.Component {
         <div style={{ width: "20%", backgroundColor: "white" }}></div>
         <div
           className="bet-history-email-container"
-          style={{ borderTop: "1px lightgrey solid" , color:'white'}}
+          style={{ borderTop: "1px lightgrey solid" , color:'white', padding:'5px'}}
         >
           <span>Bet placed at:</span>{" "}
           <span>
