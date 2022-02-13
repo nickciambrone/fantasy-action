@@ -21,7 +21,7 @@ class BetHistorySlip extends React.Component {
         className="bet-history-slip"
         style={{ fontSize: "13px" }}
       >
-        <div style={{ display: "flex", flexDirection: "row" }}>
+        <div style={{ display: "flex", flexDirection: "row", flexWrap:'wrap' }}>
         <div
         style={{
           width: "10%",
@@ -30,11 +30,11 @@ class BetHistorySlip extends React.Component {
       >
       <img height='27px' src={Dropdown}/>
       </div>
-        <div style={{ display: "flex", flexDirection: "row", width:'90%' }}>
+        <div style={{ display: "flex", flexDirection: "row", width:'90%' , justifyContent:'flex-start', flexWrap:'wrap'}}>
       
         {Object.keys(bet["betSlip"]).map((ele) => (
-            <div className="history-container-segment" style={{marginRight:'20px', borderRight:'1px solid lightgrey', padding:'0px 20px'}}>
-              <div style={{ display: "flex" }}>
+            <div className="history-container-segment" style={{border:'1px solid lightgrey', width:'30%'}}>
+              <div style={{ display: "flex", flexWrap:'wrap' }}>
                 <div style={{ paddingLeft: "5px" }}>
                   <b>{bet["betSlip"][ele]["id"].includes("0") ? "Over" : "Under"}-</b>
                 </div>
