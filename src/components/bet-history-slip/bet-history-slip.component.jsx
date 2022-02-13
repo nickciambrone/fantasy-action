@@ -25,10 +25,10 @@ class BetHistorySlip extends React.Component {
         <div
         style={{
           width: "10%",
-          paddingTop:'26px'
+          paddingTop:'26%'
         }}
       >
-      <img height='27px' src={Dropdown}/>
+      <img width='100%' src={Dropdown}/>
       </div>
         <div style={{ display: "flex", flexDirection: "row", width:'90%' , justifyContent:'flex-start', flexWrap:'wrap'}}>
       
