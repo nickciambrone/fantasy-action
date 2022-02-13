@@ -45,7 +45,7 @@ class BetHistorySlip extends React.Component {
                 <span>Risk: </span>
                 <span style={{ marginBottom: "4px" }}>
                   $
-                  {JSON.stringify(bet["betSlip"][ele]["amount"]).replace(
+                  {JSON.stringify(Math.round(bet["betSlip"][ele]["amount"]*100)/100).replace(
                     /(\d)(?=(\d\d\d)+(?!\d))/g,
                     "$1,"
                   )}
@@ -55,7 +55,7 @@ class BetHistorySlip extends React.Component {
                 <span>To Win: </span>
                 <span style={{ marginBottom: "4px" }}>
                   $
-                  {JSON.stringify(bet["betSlip"][ele]["toWin"]).replace(
+                  {JSON.stringify(Math.round(bet["betSlip"][ele]["toWin"]*100)/100).replace(
                     /(\d)(?=(\d\d\d)+(?!\d))/g,
                     "$1,"
                   )}
