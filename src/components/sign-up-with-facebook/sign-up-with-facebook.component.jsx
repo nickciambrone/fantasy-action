@@ -1,7 +1,7 @@
 import React from 'react';
 import './sign-up-with-facebook.styles.scss'
 import {signInWithFacebook} from '../../firebase/firebase.utils.js'
-import FaceBook from './17639236_1785253958471956_282550797298827264_n.png'
+import FaceBook from './continueWithFacebook.png'
 
 const SignUpWithFacebook = ()=>{
     return(

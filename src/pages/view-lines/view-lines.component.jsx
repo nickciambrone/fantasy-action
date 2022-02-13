@@ -114,8 +114,8 @@ class ViewLines extends React.Component {
                             </ViewLinesTile>
 
                             <ViewLinesTile id="0c" type="O/U" line={155} overUnder={Math.round(total * 100) / 100 + 20}>
-                              O {Math.round(total * 100) / 100 + 20}
-                              <span style={{ color: "green" }}> +155</span>
+                            U {Math.round((total + 20) * 100) / 100}
+                            <span style={{ color: "green" }}> +155</span>
                             </ViewLinesTile>
 
                             <ViewLinesTile id="1a" type="O/U" line={155} overUnder = {Math.round((total - 20) * 100) / 100}>
@@ -127,8 +127,8 @@ class ViewLines extends React.Component {
                               <span style={{ color: "green" }}> +105</span>
                             </ViewLinesTile>
                             <ViewLinesTile id="1c" type="O/U" line={-165} overUnder={Math.round(total * 100) / 100 + 20}>
-                              U {Math.round(total * 100) / 100 + 20}
-                              <span style={{ color: "green" }}> -165</span>
+                            U {Math.round((total + 20) * 100) / 100}
+                            <span style={{ color: "green" }}> -165</span>
                             </ViewLinesTile>
                           </div>
                         </div>
