@@ -25,7 +25,6 @@ class BetHistorySlip extends React.Component {
         <div
         style={{
           width: "10%",
-          paddingTop:'26%'
         }}
       >
       <img width='100%' src={Dropdown}/>
