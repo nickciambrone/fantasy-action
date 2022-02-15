@@ -75,18 +75,21 @@ class SetLineup extends React.Component {
         </div>
         <div className="main-set-lineup">
         <div style={{display:'flex'}}>
-        <span style={{color:'white', textAlign:'left', paddingTop:'10px', fontSize:'16px', fontWeight:600}}>Select a lineup</span>
+        <span style={{color:'white', textAlign:'left', paddingTop:'5px', fontSize:'17px', fontWeight:600, width:'60%', padding:'0 5px'}}> <i>Select a lineup</i> <br/><div style={{fontSize:'14px'}}>When your lineup is filled out, you can set your wagers</div> </span>
           {teamsFull === "true" ? (
             <div className = 'select-wagers-next-button'
               style={{
+                marginTop:'15px',
                 backgroundColor: "#53d337",
-                padding: "7px 15px",
+                padding: "10px 10px",
                 borderRadius: "3px",
                 fontWeight: "bolder",
                 color: "#091606",
                 cursor: "pointer",
                 fontSize: "13px",
-                marginLeft:'auto'
+                marginLeft:'auto',
+                height:'40px',
+                width:'135px'
               }}
               onClick={() => history.push("/view-lines")}
             >

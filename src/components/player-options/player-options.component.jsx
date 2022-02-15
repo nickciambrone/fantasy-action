@@ -42,6 +42,24 @@ const PlayerOptions = ({
         <div className="player-options-top">
           <Pill items={positions} selectedItem={positionSelected} />
         </div>
+        <div
+        style={{
+          color: "white",
+          display: "flex",
+          flexDirection: "row",
+          textAlign: "left",
+          fontWeight:'bold'
+        }}
+      >
+        <div style={{ width: "12%" }}></div>
+        <div style={{ width: "40%", textAlign:'center', padding:'5px 0', borderRight:'1px solid white',  borderLeft:'1px solid white' }}>Name</div>
+        <div style={{ width: "19%", textAlign:'center' , padding:'5px 0', borderRight:'1px solid white'}}>Team</div>
+        <div style={{ width: "19%", textAlign: "center",padding:'5px 0',  borderRight:'1px solid white' }}>
+          Projected 
+        </div>
+        <div style={{ width: "10%" }}></div>
+
+      </div>
         <CardList players={filteredPlayers} />
       </div>
     </div>
