@@ -2,6 +2,7 @@ import { updateBetHistory } from './user.utils.js';
 
 const INITIAL_STATE = {
   currentUser: null,
+  hasAccount:false
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -16,6 +17,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentUser:updateBetHistory(state.currentUser, action.payload)
       };
+    case "SWITCH_HAS_ACCOUNT":
+      return {
+        ...state,
+        hasAccount:!state.hasAccount
+      }
 
 
     default:

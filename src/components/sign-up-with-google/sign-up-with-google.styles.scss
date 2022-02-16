@@ -1,14 +1,15 @@
-.btn {
-    border-radius: 2px;
-    text-transform: capitalize;
-    font-size: 15px;
-    padding: 10px 19px;
-    cursor: pointer
-  }
+
   .btn-google {
     color: #545454;
-    background-color: #ffffff;
-    box-shadow: 0 1px 2px 1px #ddd
+    background-color: #f5f8fc;
+    padding:5px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-transform: capitalize;
+    height:30px
+
+
+
 }
 .btn-md {
     padding: 10px 16px;
@@ -16,7 +17,6 @@
     line-height: 23px
 }
 .sign-up-with-google{
-    margin-top:7px;
     font-weight: 500;
     color:white;
   }

@@ -8,3 +8,7 @@ export const updateBetHistory = (wager)=>({
     payload:wager
 })
 
+export const switchHasAccount = ()=>({
+    type: 'SWITCH_HAS_ACCOUNT'
+})
+

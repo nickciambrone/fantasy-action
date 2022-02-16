@@ -1,6 +1,11 @@
 .sign-in {
     display: flex;
     flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    width:96%;
+    margin-left:2%;
+    height:460px;
     .title{
         margin:10px 0
     }
@@ -11,6 +16,22 @@
       justify-content: space-between;
   }
   .submit-sign-in{
-      background-color: white;
-      color:black
+      background-color: black;
+      color:white;
+      border-radius: 4px;
+      border:1px solid black;
   }
+
+@media screen and (min-width:700px){
+    .sign-in {
+
+    height:460px;
+    }
+}
+
+@media screen and (max-width:700px){
+    .sign-in {
+
+        height:440px;
+        }
+}

@@ -20,9 +20,7 @@ import SignUp from "../../components/sign-up/sign-up.component.jsx";
 class BetReceiptContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      type: props.betSlip[0]["type"],
-    };
+  
   }
   componentDidMount = () => {
     window.scrollTo(0, 0);
@@ -73,8 +71,10 @@ class BetReceiptContainer extends React.Component {
           <div  className='sidebar-container-brc'>
             <Sidebar />
           </div>
-          {!currentUser ? <div class="sign-in-sign-up-new">
+          {!currentUser ? this.props.hasAccount ? <div class="sign-in-sign-up-new">
             <SignIn />
+            </div>:
+            <div class="sign-in-sign-up-new">
             <SignUp />
           </div> : ""}
           <div>
@@ -188,6 +188,7 @@ const mapStateToProps = (state) => ({
   userTeam: state.lineup.userTeam,
   opponentTeam: state.lineup.opponentTeam,
   currentUser: state.user.currentUser,
+  hasAccount:state.user.hasAccount
 });
 
 const mapDispatchToProps = (dispatch) => ({

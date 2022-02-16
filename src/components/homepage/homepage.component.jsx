@@ -56,8 +56,10 @@ const HomePage = ({ history, match }) => {
         <p
           style={{ display: "flex", flexDirection: "column", fontSize: "12px" }}
         >
+        <div className='social-homepage-section'>
           <SignUpWithGoogle />
           <SignUpWithFacebook />
+          </div>
         </p>
         <div
           style={{
