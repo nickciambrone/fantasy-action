@@ -17,8 +17,6 @@ class BetDetails extends React.Component {
   };
 
   render() {
-console.log(this.props.betHistory)
-  console.log(this.props.match.params.betId)
     const toDateTime = (secs) => {
       var t = new Date(1970, 0, 1); // Epoch
       t.setSeconds(secs);
@@ -52,9 +50,7 @@ console.log(this.props.betHistory)
       .replace('24:','12:')
 
 
-console.log(activeBet)
     let betTypes = Object.keys(activeBet.betSlip).map((ele) => activeBet.betSlip[ele]['type']);
-    console.log(betTypes);
     return (
       <div className="bet-details">
         <h3>Bet Details:</h3>
@@ -92,8 +88,6 @@ console.log(activeBet)
                 <span className="receipt-type" id={ele}>
                   {ele}
                 </span>
-                {console.log(ele)}
-                {console.log(this.state.type)}
                 <span
                   className={`bet-type-nav ${
                     this.state.type === ele ? "highlighted-bet" : ""

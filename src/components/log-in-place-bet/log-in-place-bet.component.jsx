@@ -8,7 +8,6 @@ import { useHistory } from 'react-router'
 
 const LogInPlaceBet = ({checkAllBetAmountsPresent}) =>
  {
-     console.log(checkAllBetAmountsPresent)
      const history = useHistory()
 
 

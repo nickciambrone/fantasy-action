@@ -23,7 +23,6 @@ dropPlayer = (name, position) =>{
         if (position === "RB") {
           let team = Object.assign({}, prevState.userTeam);
           if (team["RB1"]["name"] === "") {
-            console.log("rb1 part fired");
             team["RB1"]["name"] = player;
             return { ...prevState, userTeam: team };
 
@@ -72,7 +71,6 @@ dropPlayer = (name, position) =>{
         for (const prop in this.state.userTeam){
             if (this.state.userTeam[prop]['name']===''){
               userTeamFull=false
-              console.log('test')
             }
         }
         
@@ -91,12 +89,10 @@ dropPlayer = (name, position) =>{
         if (position === "RB") {
           let team = Object.assign({}, prevState.opponentTeam);
           if (team["RB1"]["name"] === "") {
-            console.log("rb1 part fired");
             team["RB1"]["name"] = player;
             return { ...prevState, opponentTeam: team };
 
           } else if (team["RB2"]["name"] === "") {
-            console.log("rb2 part fired");
             if (
               team["RB1"]["name"] !== player &&
               team["Flex"]["name"] !== player
@@ -143,7 +139,6 @@ dropPlayer = (name, position) =>{
         for (const prop in this.state.userTeam){
             if (this.state.userTeam[prop]['name']===''){
               userTeamFull=false
-              console.log('test')
             }
         }
         
@@ -168,10 +163,8 @@ dropPlayer = (name, position) =>{
       this.setState({ team: "user" });
     }
     if (e.target.id === "opponent" && this.state.team === "user") {
-      console.log(this.state.team);
 
       this.setState({ team: "opponent" });
-      console.log(this.state.team);
     }
   };
   render() {

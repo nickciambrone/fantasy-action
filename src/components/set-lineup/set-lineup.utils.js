@@ -4,7 +4,6 @@ export const addPlayer = (player, position, team) => {
         if (position === "RB") {
           let team = Object.assign({}, prevState.userTeam);
           if (team["RB1"]["name"] === "") {
-            console.log("rb1 part fired");
             team["RB1"]["name"] = player;
           } else if (team["RB2"]["name"] === "") {
             if (team["RB1"]["name"] !== player) {
@@ -41,10 +40,8 @@ export const addPlayer = (player, position, team) => {
         if (position === "RB") {
           let team = Object.assign({}, prevState.opponentTeam);
           if (team["RB1"]["name"] === "") {
-            console.log("rb1 part fired");
             team["RB1"]["name"] = player;
           } else if (team["RB2"]["name"] === "") {
-            console.log("rb2 part fired");
             if (
               team["RB1"]["name"] !== player &&
               team["Flex"]["name"] !== player

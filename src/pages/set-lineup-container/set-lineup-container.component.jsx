@@ -7,8 +7,6 @@ import TitleContainer from '../../components/title-container/title-container.com
 import './set-lineup-container.styles.scss'
 import Sidebar from '../../components/sidebar/sidebar.component'
 const SetLineUpContainer = ({formatSelected}) =>{
-    console.log(formatSelected)
-
 
     return(
         <div className='set-lineup-container'>

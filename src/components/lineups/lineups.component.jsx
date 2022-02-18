@@ -9,7 +9,6 @@ const lineups = ({userTeam, selectOpponentTotalProjected, selectUserTotalProject
         }
     }
   }
-  console.log(tempPositions)
   
   return (
     <div className="lineups">

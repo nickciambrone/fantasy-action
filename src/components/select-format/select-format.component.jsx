@@ -19,7 +19,7 @@ class SelectFormat extends React.Component {
     };
     this.handleChange = (event)=>{
       let quantity = parseInt(event.target.value)
-      this.setState({[event.target.id]:quantity}, ()=>console.log(this.state))
+      this.setState({[event.target.id]:quantity})
     }
   }
   render() {

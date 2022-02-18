@@ -38,7 +38,6 @@ class EmailForm extends React.Component {
     if (betRef){
 
     betRef.onSnapshot((snapShot) => {
-      console.log(snapShot);
         this.props.updateBetHistory({
           ...snapShot.data(),
         });

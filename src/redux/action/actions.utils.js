@@ -24,9 +24,6 @@ let betSlipCopy = betSlip
 
 export const updateWager = (slip, bet) =>{
 
-    console.log(slip)
-    console.log(bet)
-
     let tempSlip = slip.map(ele=> {
         if (ele['id']===bet['id']){
             ele['amount']=bet['amount']

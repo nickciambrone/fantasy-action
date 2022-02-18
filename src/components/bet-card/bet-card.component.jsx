@@ -50,7 +50,6 @@ class BetCard extends React.Component {
       allowOnChange,
       selectUserTotalProjected
     } = this.props;
-    console.log(checkAllBetAmountsPresent);
     return (
       <div className="bet-card">
         {xBetPresent ? (

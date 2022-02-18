@@ -78,8 +78,7 @@ const lineupReducer = (state = INITIAL_STATE, action) => {
     case lineupActionTypes.DROP_PLAYER:
       if (state.team === "user") {
         let tempTeam = Object.assign({}, state.userTeam);
-        console.log(action.payload.position);
-        console.log(tempTeam[action.payload.position]);
+ 
         tempTeam[action.payload.position]["name"] = "";
         tempTeam[action.payload.position]["projectedPoints"] = "";
         tempTeam[action.payload.position]["position"] = "";
@@ -89,8 +88,7 @@ const lineupReducer = (state = INITIAL_STATE, action) => {
       }
       if (state.team === "opponent") {
         let tempTeam = Object.assign({}, state.opponentTeam);
-        console.log(action.payload.position);
-        console.log(tempTeam[action.payload.position]);
+     
         tempTeam[action.payload.position]["name"] = "";
         return { ...state, opponentTeam: tempTeam };
       }

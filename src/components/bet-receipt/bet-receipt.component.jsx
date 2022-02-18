@@ -1,7 +1,6 @@
 import React from "react";
 import "./bet-receipt.styles.scss";
 const BetReciept = ({ bet }) => {
-  console.log(bet);
   return (
     <div className="bet-receipt">
       User bets opponent ${bet["amount"]} on the {bet["type"]}. If user wins,

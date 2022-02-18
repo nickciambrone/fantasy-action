@@ -10,7 +10,6 @@ class CardList extends React.Component {
     for (const prop in this.props.userTeam) {
       if (this.props.userTeam[prop]["name"] === "") {
         userTeamFull = false;
-        console.log("test");
       }
     }
 

@@ -4,7 +4,6 @@ import './pill.styles.scss'
 import {changePosition} from '../../redux/lineup/lineup.actions'
 
 const Pill= ({items, selectedItem, changePosition}) =>{
-    console.log(selectedItem)
     return (
         <div className='pill'>
 

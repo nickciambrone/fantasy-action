@@ -16,12 +16,10 @@ class App extends React.Component {
     const {setCurrentUser} = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth){
-        console.log(userAuth)
 
       const userRef = await createUserProfileDocument(userAuth);
       const betHistory = await fetchBetSlip(userAuth.uid)
       userRef.onSnapshot(snapshot => {
-        console.log(snapshot.data())
         setCurrentUser({
             id:snapshot.id,
             betHistory: betHistory,
@@ -36,7 +34,6 @@ class App extends React.Component {
 
     }
     else{
-      console.log(userAuth)
       setCurrentUser(userAuth)
     }
       
@@ -50,7 +47,6 @@ class App extends React.Component {
 
   };
   render() {
-    console.log(this.props.betSlip)
     return (
       <div className="App">
         <Switch>

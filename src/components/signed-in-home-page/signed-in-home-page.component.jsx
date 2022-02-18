@@ -13,7 +13,6 @@ class SignedInHomePage extends React.Component {
   render() {
     const {   match } = this.props;
 
-    console.log(match);
     return (
       <div className="signed-in-home-page">
         <Header />

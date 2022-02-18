@@ -34,7 +34,6 @@ const config = {
       
       }
       catch(error){
-        console.log('error: ', error.message)
       }
     }
 
@@ -47,13 +46,8 @@ const config = {
 
     const createdAt = new Date();
     try{
-      console.log("bet slip: ",betSlip) 
       betSlip = Object.assign({}, betSlip)
-      console.log("user Team: ", userTeam, ) 
-      console.log("opp team: ",opponentTeam) 
-      console.log("uid: ", userID) 
-      console.log("user em: ", userEmail) 
-      console.log("opp em: ", opponentEmail) 
+ 
 
       await betSlipRef.set({
         userTeam,
@@ -64,7 +58,6 @@ const config = {
         opponentEmail:opponentEmail      })
     }
     catch(error){
-      console.log('error: ', error.message)
       return false;
 
     }
@@ -82,8 +75,7 @@ const config = {
     const snapshot = await firestore.collection(`users/${userID}/betSlip`).get()
 
     let wagers = snapshot.docs.map(doc => doc.data())
-    console.log(wagers)
-    console.log(betId)
+
 
     let wagerDetails = wagers.filter(ele=>ele['createdAt']['seconds']===parseInt(betId))
     return wagerDetails[0]

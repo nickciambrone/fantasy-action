@@ -37,7 +37,6 @@ class SetLineup extends React.Component {
       history,
     } = this.props;
     // let filteredPlayers = players.filter((ele, ind) => positionSelected==='All' ? ele.name.length>1 : ele.position === positionSelected)
-    console.log(team);
 
     let filteredPlayers = players.filter((player) =>
       player.name.toLowerCase().includes(this.state.searchField.toLowerCase())

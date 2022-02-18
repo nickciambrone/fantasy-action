@@ -5,7 +5,6 @@ import { dropPlayer, clearRosters } from "../../redux/lineup/lineup.actions";
 
 
 const Rosters = ({ team, userTeam, opponentTeam, dropPlayer, clearRosters, location }) => {
-  // console.log(userTeam['QB']['name'])
   return (
     // <div className='rosters'>
     // <table id='roster'>

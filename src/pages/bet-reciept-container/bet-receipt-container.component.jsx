@@ -37,7 +37,6 @@ class BetReceiptContainer extends React.Component {
     );
     if (betRef) {
       await betRef.onSnapshot((snapShot) => {
-        console.log(snapShot);
         this.props.updateBetHistory({
           ...snapShot.data(),
         });
@@ -62,7 +61,6 @@ class BetReceiptContainer extends React.Component {
       updateBetHistory,
     } = this.props;
     let bets = betSlip.map((ele) => ele["type"]);
-    console.log(betSlip);
 
     return (
       <div className="bet-receipt-container">

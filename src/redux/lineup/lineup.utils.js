@@ -17,7 +17,6 @@ export const selectFormat = (format,) => {
       lineup[[position + "3"]] = { name: "" };
     }
   }
-  console.log(lineup);
   return lineup;
 };
 
@@ -54,7 +53,6 @@ export const addPlayer = (team, inactiveTeam, player) => {
     }
   }
   if (alreadyDrafted) {
-    console.log(tempTeam);
     return tempTeam;
   }
 
@@ -355,7 +353,6 @@ export const addPlayer = (team, inactiveTeam, player) => {
   
   } else {
     if (player.position==='DE'){
-      console.log('test')
       tempTeam['DEF']["name"] = player.player;
       tempTeam['DEF']["projectedPoints"] = player.projectedPoints;
       tempTeam['DEF']["position"] = player.position;

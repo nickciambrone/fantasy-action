@@ -10,7 +10,6 @@ const INITIAL_STATE = {
 const actionReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ActionActionTypes.ADD_BET:
-      console.log(action.payload);
       if (!state.slip.map((ele) => ele["id"]).includes(action.payload.id)) {
         return {
           ...state,

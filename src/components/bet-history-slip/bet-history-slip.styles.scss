@@ -1,23 +1,16 @@
 .bet-history-slip{
-    background-color: #121212;
-    border-radius: 3px;
-    padding: 2px 5px;
     color:black;
     font-weight: 500;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    margin-bottom:4px;
     width:97%;
 margin-left:1.5%;
 display: flex;
 flex-direction: column;
 text-align: left;
-margin-top:1px;
 
 
 }
 
 .history-container-segment{
-    padding:8px;
     color:white;
 }
 .edit-button{
@@ -30,7 +23,14 @@ svg{
         cursor: pointer;
     }
 }
-@media screen and (max-width: 895px) {
+@media screen and (max-width: 700px) {
+    .dropdown-img{
+        width:50%;
+        margin-left: 25%;
+    }
+    .dropdown-image-container{
+        width:14%
+    }
     .edit-button{
         margin-top:33px;
     }
@@ -45,7 +45,14 @@ svg{
 }
 
 }
-@media screen and (min-width: 895px) {
+@media screen and (min-width: 700px) {
+    .dropdown-img{
+        width:30%;
+        margin-left: 35%;
+    }
+    .dropdown-image-container{
+        width:11%
+    }
     .bet-history-email-container{
 
 

@@ -8,7 +8,6 @@ import { signInWithGoogle } from "../../firebase/firebase.utils";
 import { auth } from "../../firebase/firebase.utils";
 import {withRouter} from 'react-router-dom'
  const Header = ({ currentUser, history }) => {
-  console.log(currentUser);
   return (
     <div className="header">
        
