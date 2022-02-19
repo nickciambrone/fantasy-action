@@ -2,23 +2,19 @@ import { withRouter } from "react-router-dom";
 import TitleContainer from "../../components/title-container/title-container.component";
 import SignUpWithGoogle from "../../components/sign-up-with-google/sign-up-with-google.component";
 import SignUpWithFacebook from "../../components/sign-up-with-facebook/sign-up-with-facebook.component";
-
+import BackSmoke from './vectorstock_35553777.png'
 import "./homepage.styles.scss";
-
+import Instructions from '../instructions/instructions.component'
 const HomePage = ({ history, match }) => {
   return (
-    <div className="homepage">
+    <div className="homepage" style={{backgroundImage:`url(${BackSmoke})`, color:'white', height:'1000px'}}>
       <TitleContainer />
       <div
-        class="jumbotron"
-        style={{ textAlign: "center", borderRadius: "3px", paddingTop:'30px' }}
+        class="jumbotron-custom"
+        style={{ textAlign: "center", borderRadius: "3px", paddingTop:'15px' }}
       >
-        <div style={{display:'flex', justifyContent:'center'}}>
-          <ol style={{textAlign:'left', fontSize:'20px'}}>
-            <li>Set a custom fantasy lineup</li>
-            <li>Place prop bets with fake money</li>
-            <li>Win real money if you finish in the top 100</li>
-          </ol>
+        <div style={{display:'flex', justifyContent:'center', textAlign:'left', fontSize:'20px'}}>
+         <Instructions />
         </div>
 
         <div
@@ -95,6 +91,7 @@ const HomePage = ({ history, match }) => {
         <button
           className="set-lineup-homepage"
           onClick={() => history.push("/set-lineup")}
+          style={{border:'none'}}
         >
           Set lineup
         </button>

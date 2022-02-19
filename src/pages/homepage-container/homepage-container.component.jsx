@@ -4,7 +4,7 @@ import SignedInHomePage from '../../components/signed-in-home-page/signed-in-hom
 import {connect} from 'react-redux'
 const HomePageContainer = ({currentUser}) => {
   return (
-    <div className="homepage-container">
+    <div className="homepage-container" >
     {currentUser ? <SignedInHomePage /> : <Homepage />}
     </div>
   );
