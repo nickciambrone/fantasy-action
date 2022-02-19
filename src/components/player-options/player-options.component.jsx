@@ -44,11 +44,13 @@ const PlayerOptions = ({
         </div>
         <div
         style={{
-          color: "white",
+          color: "#7c7c7c",
           display: "flex",
           flexDirection: "row",
           textAlign: "left",
-          fontWeight:'bold'
+          fontWeight:'bold',
+          backgroundColor:'#fefeff',
+          border:'#c3c3c3 solid 1px'
         }}
       >
         <div style={{ width: "12%" }}></div>

@@ -20,7 +20,7 @@ const Card = ({player, position, team, counter, addPlayer, points, userPlayers, 
     })
 
 
-  return ( <div className={`card-container ${disabled===true ? 'disabled' : 'enabled'}`} >
+  return ( <div className={`card-container ${disabled===true ? 'disabled' : 'enabled-card'}`} >
   <div style={{width:'12%'}}>
         <img alt='player' src = {`https://robohash.org/${counter}?set=set2&size=180x180`} height='40px'></img>
       </div>

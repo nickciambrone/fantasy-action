@@ -2,17 +2,20 @@
 }
 
 #roster-container{
-  background-color:rgb(247, 245, 207);
   font-family: arial;
   font-weight:800;
   font-size: 13px;
+  color:white;
+  border: 1px solid #6d6d6d;
+  border-radius: 4px;
+  background-color: #121212;
 }
 .drop-player{
   margin-left: 2px;
   margin-top: 2px;
 
   font-size: 15px;
-  color: #c01f5c;
+  color: red;
   &:hover{
     cursor: pointer;
     color: darkred;

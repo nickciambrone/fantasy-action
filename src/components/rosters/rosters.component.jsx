@@ -81,7 +81,7 @@ const Rosters = ({ team, userTeam, opponentTeam, dropPlayer, clearRosters, locat
             }}
           >
           <div onClick ={()=>clearRosters()}
-          style ={{borderRadius:'3px',padding:'4px',width:'80%',backgroundColor:"#c01f5c",color:'white', textAlign:'center', border:'1px solid black', position:'relative', top:'7px'}}>Clear Lineup</div>
+          style ={{borderRadius:'3px',padding:'4px',width:'80%',backgroundColor:"red",color:'white', textAlign:'center', border:'1px solid black', position:'relative', top:'7px'}}>Clear Lineup</div>
           </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>

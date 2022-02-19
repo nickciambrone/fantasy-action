@@ -71,7 +71,9 @@ class SetLineup extends React.Component {
       <div className="set-lineup" style={{backgroundColor:'black'}}>
         <div className="sidebar-container-sl">
           <Sidebar />
+
         </div>
+        
         <div className="main-set-lineup">
         <div style={{display:'flex'}}>
         <span style={{color:'white', textAlign:'left', paddingTop:'5px', fontSize:'17px', fontWeight:600, width:'60%', padding:'0 5px'}}> <i>Select a lineup</i> <br/><div style={{fontSize:'14px'}}>When your lineup is filled out, you can set your wagers</div> </span>

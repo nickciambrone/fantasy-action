@@ -7,7 +7,7 @@ import "./homepage.styles.scss";
 import Instructions from '../instructions/instructions.component'
 const HomePage = ({ history, match }) => {
   return (
-    <div className="homepage" style={{backgroundImage:`url(${BackSmoke})`, color:'white', height:'1000px'}}>
+    <div className="homepage" style={{backgroundImage:`url(${BackSmoke})`, color:'white', height:'100vh'}}>
       <TitleContainer />
       <div
         class="jumbotron-custom"
@@ -93,7 +93,7 @@ const HomePage = ({ history, match }) => {
           onClick={() => history.push("/set-lineup")}
           style={{border:'none'}}
         >
-          Set lineup
+          Build team
         </button>
       </div>
     </div>
