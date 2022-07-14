@@ -81,7 +81,7 @@ class BetReceiptContainer extends React.Component {
           </div>
           <div>
           </div>
-          <div className="check-bets">
+          <div className="check-bets" style={{minHeight:'100vh'}}>
             <div className="bet-slip">
               <div
                 className="bet-slip-header"
