@@ -3,7 +3,7 @@
     .set-lineup{
         display: flex;
         flex-direction: column;
-        height:1000px;
+        min-height:100vh;
 
         .chose-team-and-rosters{
             width: 96%;
@@ -55,7 +55,7 @@
     .set-lineup{
         display: flex;
         flex-direction: row;
-        height:613px;
+        min-height:100vh;
     }
         .chose-team-and-rosters{
             width:49%;
